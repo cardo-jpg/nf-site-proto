@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Grupo NF — Gráfica têxtil em Brusque há mais de 26 anos</title>
+<meta name="description" content="A gráfica nº1 do setor têxtil. Há mais de 26 anos desenvolvemos cartelas de cores, mostruários, books, leques e etiquetas para malharias, tinturarias e estamparias de todo o Brasil. Produção própria em Brusque/SC."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="icon" href="img/logo.png"/>
+<style>
+:root{
+  --ink:#16191c;--ink2:#3f464c;--mut:#737b82;--line:#e5e2db;--hair:#d7d3ca;
+  --paper:#f5f2ec;--paper2:#ece8df;--white:#fff;
+  --blue:#0071b8;--blued:#004e80;--gold:#b8894a;--green:#5f9433;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--white);font-size:16px;line-height:1.6;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}img{max-width:100%;display:block;}
+.serif{font-family:'Fraunces',Georgia,serif;}
+.wrap{max-width:1240px;margin:0 auto;padding:0 40px;}
+@media(max-width:700px){.wrap{padding:0 22px;}}
+.kick{font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--mut);display:inline-flex;align-items:center;gap:12px;}
+.kick::before{content:'';width:26px;height:1px;background:var(--ink);opacity:.45;}
+.kick.on{color:rgba(255,255,255,.75);}
+.kick.on::before{background:#fff;opacity:.6;}
+.kick.c{justify-content:center;}
+
+/* NAV */
+nav{position:fixed;inset:0 0 auto 0;z-index:100;height:78px;display:flex;align-items:center;transition:background .3s,box-shadow .3s,border-color .3s;border-bottom:1px solid transparent;}
+nav.solid{background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-color:var(--line);}
+.nav-in{width:100%;max-width:1240px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo img{height:40px;width:auto;transition:filter .3s;}
+nav:not(.solid) .nav-logo img{filter:brightness(0) invert(1);}
+.nav-menu{display:flex;gap:36px;align-items:center;}
+.nav-menu a{font-size:.84rem;font-weight:500;color:rgba(255,255,255,.82);transition:color .2s;}
+nav.solid .nav-menu a{color:var(--ink2);}
+.nav-menu a:hover{color:var(--blue);}
+.nav-cta{border:1px solid rgba(255,255,255,.5);padding:11px 22px;font-size:.78rem!important;letter-spacing:.06em;text-transform:uppercase;color:#fff!important;transition:.25s;}
+nav.solid .nav-cta{border-color:var(--ink);color:var(--ink)!important;}
+.nav-cta:hover{background:var(--ink)!important;border-color:var(--ink);color:#fff!important;}
+@media(max-width:880px){.nav-in{padding:0 22px;}.nav-menu a:not(.nav-cta){display:none;}}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;color:#fff;padding:0 0 72px;overflow:hidden;}
+.hero-img{position:absolute;inset:0;z-index:0;}
+.hero-img img{width:100%;height:100%;object-fit:cover;}
+.hero-img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,16,22,.6) 0%,rgba(8,16,22,.22) 36%,rgba(8,16,22,.78) 100%);}
+.hero-in{position:relative;z-index:1;width:100%;}
+.hero h1{font-weight:400;font-size:clamp(2.7rem,6.2vw,5.4rem);line-height:1.01;letter-spacing:-.015em;margin:26px 0 0;max-width:16ch;}
+.hero h1 em{font-style:italic;color:#efe7d6;}
+.hero-foot{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;margin-top:40px;flex-wrap:wrap;}
+.hero-lead{font-size:1.06rem;color:rgba(255,255,255,.86);max-width:48ch;line-height:1.7;}
+.hero-actions{display:flex;align-items:center;gap:24px;}
+.btn{display:inline-flex;align-items:center;gap:10px;font-size:.82rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:16px 30px;transition:.25s;cursor:pointer;border:1px solid transparent;font-family:inherit;}
+.btn-solid{background:#fff;color:var(--ink);}
+.btn-solid:hover{background:var(--blue);color:#fff;}
+.btn-line{border-color:rgba(255,255,255,.55);color:#fff;}
+.btn-line:hover{background:rgba(255,255,255,.12);}
+.btn-ink{background:var(--ink);color:#fff;}
+.btn-ink:hover{background:var(--blue);}
+@media(max-width:820px){.hero{padding-bottom:52px;}.hero h1{font-size:2.5rem;}}
+
+/* NUMBERS strip */
+.nums{background:var(--ink);color:#fff;}
+.nums-in{display:grid;grid-template-columns:repeat(4,1fr);}
+.num{padding:40px 30px;border-right:1px solid rgba(255,255,255,.1);}
+.num:last-child{border-right:none;}
+.num .n{font-family:'Fraunces',serif;font-size:2.6rem;font-weight:400;letter-spacing:-.02em;line-height:1;}
+.num .n em{font-style:normal;color:#9ecbe8;}
+.num .l{font-size:.8rem;color:rgba(255,255,255,.6);margin-top:8px;}
+@media(max-width:760px){.nums-in{grid-template-columns:1fr 1fr;}.num:nth-child(2){border-right:none;}.num{border-bottom:1px solid rgba(255,255,255,.1);}}
+
+/* SECTION */
+section.blk{padding:110px 0;}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-bottom:56px;flex-wrap:wrap;}
+.sec-head h2{font-weight:400;font-size:clamp(2rem,3.6vw,3.1rem);line-height:1.08;letter-spacing:-.015em;margin-top:18px;max-width:18ch;}
+.sec-head h2 em{font-style:italic;color:var(--blue);}
+.sec-head .intro{color:var(--mut);max-width:34ch;font-size:.98rem;}
+@media(max-width:860px){section.blk{padding:72px 0;}.sec-head{margin-bottom:38px;}}
+
+/* PRODUCTS */
+.pgrid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;}
+.pitem{position:relative;overflow:hidden;background:var(--paper2);}
+.pitem img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s cubic-bezier(.2,.8,.2,1);}
+.pitem:hover img{transform:scale(1.05);}
+.pitem .meta{position:absolute;left:0;right:0;bottom:0;padding:26px;background:linear-gradient(180deg,transparent,rgba(10,16,22,.85));color:#fff;}
+.pitem .idx{font-size:.68rem;letter-spacing:.18em;opacity:.7;}
+.pitem .nm{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:500;margin-top:4px;line-height:1.1;}
+.pitem .ds{font-size:.84rem;color:rgba(255,255,255,.82);margin-top:8px;max-width:42ch;line-height:1.5;opacity:0;max-height:0;transition:opacity .4s,max-height .4s;}
+.pitem:hover .ds{opacity:1;max-height:120px;}
+.pitem{grid-column:span 4;aspect-ratio:3/3.4;}
+.pitem.wide{grid-column:span 6;aspect-ratio:3/2.1;}
+@media(max-width:860px){.pitem,.pitem.wide{grid-column:span 12;aspect-ratio:3/2.2;}}
+
+/* OUTROS (secundário) */
+.outros{background:var(--paper);}
+.ogrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.ocard{background:#fff;border:1px solid var(--line);}
+.ocard .oimg{aspect-ratio:4/3;overflow:hidden;}
+.ocard .oimg img{width:100%;height:100%;object-fit:cover;}
+.ocard .ob{padding:18px 20px 22px;}
+.ocard .on{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:500;}
+.ocard .od{font-size:.8rem;color:var(--mut);margin-top:4px;line-height:1.5;}
+@media(max-width:860px){.ogrid{grid-template-columns:1fr 1fr;}}
+@media(max-width:520px){.ogrid{grid-template-columns:1fr;}}
+
+/* FEATURE estrutura */
+.feat{background:var(--ink);color:#fff;}
+.feat-grid{display:grid;grid-template-columns:1fr 1fr;min-height:620px;}
+.feat-img{position:relative;overflow:hidden;}
+.feat-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.feat-txt{padding:96px 7vw 96px 72px;display:flex;flex-direction:column;justify-content:center;}
+.feat-txt h2{font-weight:400;font-size:clamp(1.9rem,3vw,2.9rem);line-height:1.15;margin:22px 0 22px;letter-spacing:-.01em;}
+.feat-txt h2 em{font-style:italic;color:#9ecbe8;}
+.feat-txt p{color:rgba(255,255,255,.72);font-size:1.02rem;line-height:1.8;margin-bottom:28px;max-width:46ch;}
+.feat-list{list-style:none;}
+.feat-list li{display:flex;gap:16px;padding:16px 0;border-top:1px solid rgba(255,255,255,.14);font-size:.96rem;}
+.feat-list li:last-child{border-bottom:1px solid rgba(255,255,255,.14);}
+.feat-list .fn{font-family:'Fraunces',serif;font-style:italic;color:#9ecbe8;min-width:30px;}
+@media(max-width:860px){.feat-grid{grid-template-columns:1fr;}.feat-img{min-height:360px;}.feat-txt{padding:60px 22px;}}
+
+/* QUOTE */
+.quote{padding:120px 0;text-align:center;background:var(--paper);}
+.quote blockquote{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(1.7rem,3.3vw,2.8rem);line-height:1.34;letter-spacing:-.01em;max-width:22ch;margin:28px auto 0;}
+.quote blockquote em{font-style:italic;color:var(--blue);}
+.quote .who{margin-top:30px;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);}
+
+/* DEPOIMENTOS */
+.rev-head{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:44px;}
+.rev-score{display:flex;align-items:baseline;gap:10px;}
+.rev-score .big{font-family:'Fraunces',serif;font-size:3rem;line-height:1;}
+.rev-score .st{color:#e8a81e;letter-spacing:2px;font-size:1rem;}
+.rev-score .ct{font-size:.82rem;color:var(--mut);}
+.rev-g{display:inline-flex;align-items:center;gap:7px;font-size:.78rem;color:var(--mut);margin-left:auto;}
+.rev-g svg{width:16px;height:16px;}
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.rev{border:1px solid var(--line);padding:26px;background:#fff;}
+.rev .rs{color:#e8a81e;letter-spacing:1px;font-size:.84rem;margin-bottom:12px;}
+.rev p{font-size:.9rem;color:var(--ink2);line-height:1.65;margin-bottom:16px;}
+.rev .who{display:flex;align-items:center;gap:11px;}
+.rev .av{width:36px;height:36px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:.85rem;flex-shrink:0;}
+.rev .nm{font-size:.82rem;font-weight:600;}
+.rev .dt{font-size:.72rem;color:var(--mut);}
+@media(max-width:860px){.revs{grid-template-columns:1fr;}}
+
+/* BLOG */
+.blog-bg{background:var(--paper);}
+.bgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.post{background:#fff;border:1px solid var(--line);display:flex;flex-direction:column;transition:.2s;}
+.post:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(10,30,50,.08);}
+.post .pt{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);padding:22px 24px 0;}
+.post .ph{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:500;line-height:1.25;padding:10px 24px 0;flex:1;}
+.post .pf{padding:16px 24px 22px;font-size:.78rem;color:var(--mut);display:flex;align-items:center;gap:8px;}
+@media(max-width:860px){.bgrid{grid-template-columns:1fr;}}
+
+/* FAQ */
+.faq{max-width:820px;margin:0 auto;}
+.qa{border-top:1px solid var(--hair);}
+.qa:last-child{border-bottom:1px solid var(--hair);}
+.qa button{width:100%;background:none;border:none;font-family:inherit;text-align:left;padding:24px 4px;display:flex;justify-content:space-between;align-items:center;gap:20px;cursor:pointer;color:var(--ink);}
+.qa .q{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:500;}
+.qa .ic{font-size:1.3rem;color:var(--blue);transition:transform .25s;flex-shrink:0;}
+.qa.open .ic{transform:rotate(45deg);}
+.qa .a{max-height:0;overflow:hidden;transition:max-height .3s ease;}
+.qa .a p{padding:0 4px 24px;color:var(--ink2);font-size:.92rem;line-height:1.7;max-width:70ch;}
+
+/* CONTATO */
+.contact{background:var(--ink);color:#fff;padding:110px 0;}
+.c-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:70px;align-items:start;}
+.contact h2{font-weight:400;font-size:clamp(2.1rem,4vw,3.3rem);line-height:1.08;letter-spacing:-.015em;margin:22px 0 0;}
+.contact h2 em{font-style:italic;color:#9ecbe8;}
+.c-lead{color:rgba(255,255,255,.7);font-size:1.02rem;line-height:1.8;margin-top:24px;max-width:40ch;}
+.c-info{margin-top:40px;}
+.ci{display:flex;align-items:baseline;gap:16px;padding:18px 0;border-top:1px solid rgba(255,255,255,.14);}
+.ci:last-child{border-bottom:1px solid rgba(255,255,255,.14);}
+.ci .cl{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);min-width:92px;}
+.ci .cv{font-size:1rem;}.ci a.cv:hover{color:#9ecbe8;}
+.c-card{background:#fff;color:var(--ink);padding:40px;}
+.c-card .h{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:500;margin-bottom:8px;}
+.c-card .p{font-size:.86rem;color:var(--mut);margin-bottom:26px;}
+.c-card .btn{width:100%;justify-content:center;}
+@media(max-width:860px){.contact{padding:72px 0;}.c-grid{grid-template-columns:1fr;gap:40px;}.c-card{padding:30px 24px;}}
+
+/* FOOTER */
+footer{background:#0f1215;color:rgba(255,255,255,.55);padding:64px 0 30px;}
+.foot-top{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.12);}
+.foot-logo{height:42px;filter:brightness(0) invert(1);opacity:.9;margin-bottom:16px;}
+.foot-top p{max-width:40ch;font-size:.88rem;line-height:1.7;}
+.fcols{display:flex;gap:64px;flex-wrap:wrap;}
+.fcol h5{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:14px;}
+.fcol a,.fcol p{display:block;font-size:.88rem;color:rgba(255,255,255,.7);line-height:2;}
+.fcol a:hover{color:#fff;}
+.foot-bot{margin-top:26px;font-size:.76rem;color:rgba(255,255,255,.38);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+@media(max-width:760px){.foot-top{flex-direction:column;}}
+
+.mwa{display:none;}
+@media(max-width:880px){.mwa{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:90;background:var(--ink);color:#fff;padding:15px;align-items:center;justify-content:center;gap:10px;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;}body{padding-bottom:52px;}}
+
+.rv{opacity:0;transform:translateY(22px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1);}
+.rv.in{opacity:1;transform:none;}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1!important;transform:none!important;}}
+
+/* PROTO ribbon */
+.proto{position:fixed;top:0;right:0;z-index:200;background:var(--gold);color:#fff;font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:5px 14px;}
+</style>
+</head>
+<body>
+<div class="proto">Protótipo · Cardo</div>
+
+<nav id="nav">
+  <div class="nav-in">
+    <a class="nav-logo" href="#top"><img src="img/logo.png" alt="Grupo NF"/></a>
+    <div class="nav-menu">
+      <a href="#produtos">Produtos</a>
+      <a href="#empresa">A empresa</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#blog">Blog</a>
+      <a href="#contato" class="nav-cta">Orçamento</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="hero-img"><img src="img/hero-bg.jpg" alt="Mostruários e cartelas de cores do Grupo NF"/></div>
+  <div class="hero-in wrap">
+    <span class="kick on">Grupo NF · Desde 2000 · Brusque / SC</span>
+    <h1 class="serif">A gráfica que <em>veste</em> a indústria têxtil.</h1>
+    <div class="hero-foot">
+      <p class="hero-lead">Há mais de 26 anos desenvolvemos cartelas de cores, mostruários, books e etiquetas para malharias, tinturarias e estamparias de todo o Brasil — com produção própria e o olhar de quem nasceu dentro do setor têxtil.</p>
+      <div class="hero-actions">
+        <a href="#contato" class="btn btn-solid">Pedir orçamento</a>
+        <a href="#produtos" class="btn btn-line">Ver produtos</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- NÚMEROS -->
+<section class="nums">
+  <div class="wrap nums-in">
+    <div class="num"><div class="n serif">+26<em></em></div><div class="l">anos no setor têxtil</div></div>
+    <div class="num"><div class="n serif">+1.000</div><div class="l">empresas atendidas</div></div>
+    <div class="num"><div class="n serif">4,9<em>★</em></div><div class="l">152 avaliações no Google</div></div>
+    <div class="num"><div class="n serif">100<em>%</em></div><div class="l">produção própria</div></div>
+  </div>
+</section>
+
+<!-- PRODUTOS TÊXTEIS -->
+<section class="blk" id="produtos">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="rv"><span class="kick">Produtos têxteis</span><h2 class="serif">Tudo o que apresenta a sua <em>coleção</em>.</h2></div>
+      <p class="intro rv">Do mostruário que leva as cores ao cliente à etiqueta que vai na peça — produzimos a linha completa para quem faz fio, tecido e malha.</p>
+    </div>
+    <div class="pgrid">
+      <a class="pitem rv" href="#contato"><img src="img/prod-cartela.jpg" alt="Cartela de cores"/><div class="meta"><div class="idx">01</div><div class="nm serif">Cartela de cores</div><div class="ds">Organiza e apresenta as opções de cores de uma coleção de forma prática e visual.</div></div></a>
+      <a class="pitem rv" href="#contato"><img src="img/prod-leque.jpg" alt="Leque de tecido"/><div class="meta"><div class="idx">02</div><div class="nm serif">Leque de tecido</div><div class="ds">Mostruário prático para apresentar seus artigos e acabamentos.</div></div></a>
+      <a class="pitem rv" href="#contato"><img src="img/prod-books.jpg" alt="Books e fichários"/><div class="meta"><div class="idx">03</div><div class="nm serif">Books &amp; fichários</div><div class="ds">Reúnem e apresentam a sua linha de tecidos com organização.</div></div></a>
+      <a class="pitem wide rv" href="#contato"><img src="img/prod-cinta.jpg" alt="Cinta para rolo de malha"/><div class="meta"><div class="idx">04</div><div class="nm serif">Cinta para rolo de malha</div><div class="ds">Identificação personalizada com a marca da sua indústria em cada rolo.</div></div></a>
+      <a class="pitem wide rv" href="#contato"><img src="img/prod-lapela.jpg" alt="Lapela e cabide"/><div class="meta"><div class="idx">05</div><div class="nm serif">Lapela &amp; cabide</div><div class="ds">Apresenta e identifica tecidos direto no cabide, mostrando uma área maior do artigo.</div></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- OUTROS MATERIAIS -->
+<section class="blk outros">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="rv"><span class="kick">Outros materiais</span><h2 class="serif">Além do mostruário.</h2></div>
+      <p class="intro rv">A mesma qualidade de impressão e acabamento para a comunicação e a embalagem da sua marca.</p>
+    </div>
+    <div class="ogrid">
+      <div class="ocard rv"><div class="oimg"><img src="img/prod-sacolas.jpg" alt="Sacolas personalizadas"/></div><div class="ob"><div class="on serif">Sacolas</div><div class="od">Personalizadas com a marca da sua loja ou confecção.</div></div></div>
+      <div class="ocard rv"><div class="oimg"><img src="img/prod-tags.jpg" alt="Tags"/></div><div class="ob"><div class="on serif">Tags</div><div class="od">Etiquetas de marca, do modelo simples ao acabamento premium.</div></div></div>
+      <div class="ocard rv"><div class="oimg"><img src="img/prod-textur.jpg" alt="Texturização"/></div><div class="ob"><div class="on serif">Texturização</div><div class="od">Relevos e efeitos táteis que valorizam o impresso.</div></div></div>
+      <div class="ocard rv"><div class="oimg"><img src="img/fachada.jpg" alt="Caixas e envelopes"/></div><div class="ob"><div class="on serif">Caixas &amp; envelopes</div><div class="od">Embalagens, encartes e pastas personalizados.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ESTRUTURA / A EMPRESA -->
+<section class="feat" id="empresa">
+  <div class="feat-grid">
+    <div class="feat-img"><img src="img/prod-sacolas.jpg" alt="Produção e acabamento — Grupo NF"/></div>
+    <div class="feat-txt">
+      <span class="kick on">A empresa</span>
+      <h2 class="serif">Nascemos dentro do polo têxtil — e é só disso que a gente <em>entende</em>.</h2>
+      <p>Não somos uma gráfica genérica que também atende têxtil. Há mais de 26 anos, em Brusque, produzimos sob o mesmo teto o material que apresenta e identifica a coleção. O que você aprova na amostra é exatamente o que chega na sua empresa.</p>
+      <ul class="feat-list">
+        <li><span class="fn serif">01</span><span>Produção própria — prazo e qualidade no nosso controle</span></li>
+        <li><span class="fn serif">02</span><span>Fidelidade de cor conforme a sua referência</span></li>
+        <li><span class="fn serif">03</span><span>Do pequeno lote à grande tiragem</span></li>
+        <li><span class="fn serif">04</span><span>Entrega para todo o Brasil</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote">
+  <div class="wrap rv">
+    <span class="kick c">Nossa missão</span>
+    <blockquote class="serif">Ajudar quem produz tecido e malha a apresentar suas coleções com a <em>qualidade que elas merecem</em>.</blockquote>
+    <div class="who">Grupo NF · Referência nacional no setor têxtil</div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="blk" id="depoimentos">
+  <div class="wrap">
+    <div class="rev-head rv">
+      <span class="kick">Depoimentos</span>
+      <div class="rev-score"><span class="big serif">4,9</span><div><div class="st">★★★★★</div><div class="ct">152 avaliações</div></div></div>
+      <a class="rev-g" href="https://www.google.com/search?q=Grupo+NF+Brusque" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23z"/><path fill="#FBBC05" d="M5.84 14.1a6.6 6.6 0 0 1 0-4.2V7.06H2.18a11 11 0 0 0 0 9.88l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1A11 11 0 0 0 2.18 7.06l3.66 2.84C6.71 7.3 9.14 5.38 12 5.38z"/></svg>Avaliações no Google</a>
+    </div>
+    <div class="revs">
+      <div class="rev rv"><div class="rs">★★★★★</div><p>"Excelente atendimento! O serviço prestado foi de muita qualidade e superou minhas expectativas. Quero destacar também a Priscila, muito atenciosa e prestativa durante todo o atendimento. Recomendo!"</p><div class="who"><div class="av">F</div><div><div class="nm">Fabrízio Ramos</div><div class="dt">Avaliação no Google</div></div></div></div>
+      <div class="rev rv"><div class="rs">★★★★★</div><p>"Atendimento excelente, muito atenciosos nas demandas, entrega de produto com qualidade e sempre respeitando os prazos estipulados. Recomendo!"</p><div class="who"><div class="av">A</div><div><div class="nm">Ana Claudia Paloschi</div><div class="dt">Avaliação no Google</div></div></div></div>
+      <div class="rev rv"><div class="rs">★★★★★</div><p>"Excelente atendimento, rápidos e atenciosos. Sempre conseguem cumprir os prazos e entregar tudo da melhor maneira!! Podem confiar."</p><div class="who"><div class="av">A</div><div><div class="nm">Amanda de Castilhos</div><div class="dt">Avaliação no Google</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="blk blog-bg" id="blog">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="rv"><span class="kick">Do blog</span><h2 class="serif">Conteúdo para quem é do <em>têxtil</em>.</h2></div>
+      <a class="intro rv" href="https://www.gruponf.com.br/blog" target="_blank" rel="noopener" style="color:var(--blue);font-weight:600;">Ver todos os artigos →</a>
+    </div>
+    <div class="bgrid">
+      <a class="post rv" href="https://www.gruponf.com.br/blog" target="_blank" rel="noopener"><div class="pt">Mostruário</div><div class="ph serif">A importância do mostruário nas feiras têxteis</div><div class="pf">Apresentação estratégica de coleções</div></a>
+      <a class="post rv" href="https://www.gruponf.com.br/blog" target="_blank" rel="noopener"><div class="pt">Tendências</div><div class="ph serif">Tendências do mercado têxtil para 2027</div><div class="pf">O que muda na velocidade e nos processos</div></a>
+      <a class="post rv" href="https://www.gruponf.com.br/blog" target="_blank" rel="noopener"><div class="pt">Produção</div><div class="ph serif">Offset ou impressão digital: qual escolher</div><div class="pf">Comparativo entre as duas tecnologias</div></a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="blk">
+  <div class="wrap">
+    <div class="sec-head" style="justify-content:center;text-align:center;margin-bottom:44px;">
+      <div class="rv" style="width:100%;"><span class="kick c">Dúvidas frequentes</span><h2 class="serif" style="margin:18px auto 0;">Respostas diretas antes de falar com a gente.</h2></div>
+    </div>
+    <div class="faq">
+      <div class="qa"><button><span class="q serif">Vocês atendem pedidos pequenos?</span><span class="ic">+</span></button><div class="a"><p>Sim. Nossa estrutura atende do pequeno ao grande pedido — de poucas unidades a grandes tiragens. Conte pra gente a quantidade e montamos o orçamento.</p></div></div>
+      <div class="qa"><button><span class="q serif">Fazem cartela de cores personalizada?</span><span class="ic">+</span></button><div class="a"><p>Sim. Produzimos cartelas com padrão Pantone e cores exclusivas, com amostra para você aprovar antes da produção em escala. O que você aprova é o que chega.</p></div></div>
+      <div class="qa"><button><span class="q serif">Atendem empresas fora de Brusque?</span><span class="ic">+</span></button><div class="a"><p>Sim. Somos de Brusque/SC, no coração do polo têxtil, mas produzimos e entregamos para malharias, tinturarias e estamparias de todo o Brasil.</p></div></div>
+      <div class="qa"><button><span class="q serif">Em quanto tempo recebo o orçamento?</span><span class="ic">+</span></button><div class="a"><p>Retornamos rápido pelo WhatsApp em horário comercial. Quanto mais detalhes (produto e quantidade), mais ágil o retorno.</p></div></div>
+      <div class="qa"><button><span class="q serif">Quais materiais vocês produzem?</span><span class="ic">+</span></button><div class="a"><p>Cartela de cores, cinta para rolo de malha, leque de tecido, lapela e etiqueta de composição, tags, books e fichários, sacolas, caixas, envelopes e texturização.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section class="contact" id="contato">
+  <div class="wrap c-grid">
+    <div class="rv">
+      <span class="kick on">Vamos conversar</span>
+      <h2 class="serif">Peça seu <em>orçamento</em>.</h2>
+      <p class="c-lead">Conte o que a sua coleção precisa. Nossa equipe retorna com valor e prazo — sem compromisso.</p>
+      <div class="c-info">
+        <div class="ci"><span class="cl">WhatsApp</span><a class="cv" href="#" onclick="return wa()">(47) 98442-8929</a></div>
+        <div class="ci"><span class="cl">E-mail</span><a class="cv" href="mailto:vendas1@gruponf.com.br">vendas1@gruponf.com.br</a></div>
+        <div class="ci"><span class="cl">Telefone</span><a class="cv" href="tel:+554733500560">(47) 3350-0560</a></div>
+        <div class="ci"><span class="cl">Endereço</span><span class="cv">R. Dorval Luz, 251 · Santa Terezinha · Brusque/SC</span></div>
+      </div>
+    </div>
+    <div class="c-card rv">
+      <div class="h serif">Fale com a equipe</div>
+      <div class="p">A forma mais rápida de começar o seu pedido.</div>
+      <a href="#" onclick="return wa()" class="btn btn-ink">Pedir orçamento no WhatsApp</a>
+      <p style="font-size:.72rem;color:var(--mut);text-align:center;margin-top:16px;">Resposta em horário comercial · Sem compromisso</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <img class="foot-logo" src="img/logo.png" alt="Grupo NF"/>
+        <p>Gráfica têxtil em Brusque/SC. Há mais de 26 anos desenvolvendo cartelas, mostruários e etiquetas para a indústria têxtil de todo o Brasil.</p>
+      </div>
+      <div class="fcols">
+        <div class="fcol"><h5>Produtos</h5><a href="#produtos">Cartelas de cores</a><a href="#produtos">Leques &amp; mostruários</a><a href="#produtos">Books &amp; fichários</a><a href="#produtos">Tags &amp; lapelas</a></div>
+        <div class="fcol"><h5>Empresa</h5><a href="#empresa">A empresa</a><a href="#depoimentos">Depoimentos</a><a href="https://www.gruponf.com.br/blog" target="_blank" rel="noopener">Blog</a></div>
+        <div class="fcol"><h5>Contato</h5><a href="#" onclick="return wa()">(47) 98442-8929</a><a href="mailto:vendas1@gruponf.com.br">vendas1@gruponf.com.br</a><p>Brusque · Santa Catarina</p></div>
+      </div>
+    </div>
+    <div class="foot-bot"><span>© 2026 Grupo NF · Todos os direitos reservados</span><span>Brusque / SC · Brasil</span></div>
+  </div>
+</footer>
+
+<a class="mwa" href="#" onclick="return wa()">Pedir orçamento no WhatsApp</a>
+
+<script>
+const WA='5547984428929';
+function wa(){window.open('https://wa.me/'+WA+'?text='+encodeURIComponent('Olá! Vim pelo site do Grupo NF e gostaria de um orçamento.'),'_blank');return false;}
+// nav solid
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('solid',scrollY>60),{passive:true});
+// faq
+document.querySelectorAll('.qa button').forEach(b=>b.addEventListener('click',()=>{
+  const qa=b.parentElement, open=qa.classList.contains('open');
+  document.querySelectorAll('.qa').forEach(x=>{x.classList.remove('open');x.querySelector('.a').style.maxHeight=null;});
+  if(!open){qa.classList.add('open');const a=qa.querySelector('.a');a.style.maxHeight=a.scrollHeight+'px';}
+}));
+// reveal
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}}),{threshold:.12,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.rv').forEach(e=>io.observe(e));
+</script>
+</body>
+</html>
