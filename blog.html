@@ -45,20 +45,29 @@
   .bhead h1 em{font-style:italic;color:var(--green)}
   .bhead p{font-size:17px;color:#4a463c;max-width:620px}
 
-  /* FEATURED */
+  /* animated underline (card-18) */
+  .ul{background-image:linear-gradient(var(--green),var(--green));background-size:0% 2px;background-position:left bottom;background-repeat:no-repeat;transition:background-size .5s;padding-bottom:3px}
+
+  /* FEATURED (card-18 featured) */
   .feat{padding:30px 0 10px}
-  .feat a{display:grid;grid-template-columns:1.15fr 1fr;gap:0;background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:.25s}
-  .feat a:hover{box-shadow:0 20px 50px rgba(40,34,20,.12);transform:translateY(-3px)}
-  .feat .im{min-height:340px;background-size:cover;background-position:center}
+  .feat a{display:grid;grid-template-columns:1.15fr 1fr;gap:0;background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:.3s}
+  .feat a:hover{box-shadow:0 20px 50px rgba(40,34,20,.14);transform:translateY(-5px)}
+  .feat .im{overflow:hidden;min-height:360px}
+  .feat .im img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+  .feat a:hover .im img{transform:scale(1.05)}
+  .feat a:hover .ul{background-size:100% 2px}
   .feat .bd{padding:40px 42px;display:flex;flex-direction:column;justify-content:center}
   .tag{display:inline-flex;align-items:center;font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--green);background:#e9efe8;padding:5px 11px;border-radius:999px;width:fit-content}
-  .feat h2{font-size:clamp(24px,3vw,34px);margin:16px 0 12px}
-  .feat p{color:#4a463c;font-size:15.5px;margin-bottom:18px}
-  .meta{font-size:13px;color:var(--muted)}
-  .readmore{margin-top:16px;color:var(--green);font-weight:600;font-size:14.5px}
+  .metarow{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+  .metarow .d{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .feat h2{font-size:clamp(24px,3vw,34px);margin:4px 0 12px}
+  .feat p{color:#4a463c;font-size:15.5px;margin-bottom:22px}
+  .readbtn{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;font-size:14.5px;font-weight:500;padding:11px 20px;border-radius:10px;width:fit-content}
+  .readbtn svg{width:16px;height:16px;stroke:#fff;fill:none;stroke-width:2;transition:transform .3s}
+  .feat a:hover .readbtn svg{transform:translateX(4px)}
   @media(max-width:820px){.feat a{grid-template-columns:1fr}.feat .im{min-height:220px}}
 
-  /* GRID */
+  /* GRID (card-18 default) */
   .posts{padding:44px 0 20px}
   .sec-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:26px;flex-wrap:wrap;gap:10px}
   .sec-head h2{font-size:clamp(22px,3vw,30px)}
@@ -66,16 +75,45 @@
   .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
   @media(max-width:860px){.grid{grid-template-columns:1fr 1fr}}
   @media(max-width:560px){.grid{grid-template-columns:1fr}}
-  .pc{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:.25s;display:flex;flex-direction:column}
-  .pc:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(40,34,20,.12)}
-  .pc .im{aspect-ratio:16/10;background-size:cover;background-position:center}
+  .pc{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:.3s;display:flex;flex-direction:column}
+  .pc:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(40,34,20,.13)}
+  .pc:hover .ul{background-size:100% 2px}
+  .pc .im{aspect-ratio:16/10;overflow:hidden}
+  .pc .im img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+  .pc:hover .im img{transform:scale(1.05)}
   .pc .bd{padding:20px 22px 24px;display:flex;flex-direction:column;flex:1}
   .pc h3{font-size:20px;margin:12px 0 8px;line-height:1.18}
+  .pc h3 .ul{display:inline}
   .pc p{font-size:14px;color:var(--muted);flex:1}
-  .pc .meta{margin-top:14px}
+  .pc .d{margin-top:14px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 
-  /* ===== DEPOIMENTOS (carrossel 3D portado) ===== */
-  .dep-bg{background:var(--paper2);margin-top:50px}
+  /* ===== WORKS WHEEL (porte vanilla) — produtos NF ===== */
+  .ww-wrap{background:var(--paper2);margin-top:50px}
+  .ww-inner{max-width:1180px;margin:0 auto;padding:60px 28px 20px}
+  .ww-head{text-align:center;margin-bottom:6px}
+  .ww-head .k{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .ww-head h2{font-size:clamp(26px,3.6vw,40px);margin-top:12px}
+  .ww-head p{color:var(--muted);margin-top:10px;font-size:14.5px}
+  .ww{--background:var(--paper2);--foreground:var(--ink);--muted-fg:#8a8374;
+      position:relative;height:clamp(460px,72vh,720px);width:100%;overflow:hidden;user-select:none;color:var(--foreground)}
+  .ww-stage{position:absolute;inset:0;outline:none;cursor:grab;touch-action:pan-x}
+  .ww-stage:active{cursor:grabbing}
+  .ww-wheel{position:absolute;top:50%;left:50%;transform-style:preserve-3d}
+  .ww-card{position:absolute;backface-visibility:hidden}
+  .ww-face{position:relative;display:block;width:100%;height:100%;overflow:hidden;border-radius:12px;background:var(--sand);box-shadow:0 18px 40px -18px rgba(27,29,32,.55)}
+  .ww-face img{width:100%;height:100%;object-fit:cover;display:block}
+  .ww-badge{position:absolute;right:12px;bottom:12px;display:flex;align-items:center;gap:5px;background:rgba(247,245,239,.85);color:var(--ink);font-size:.72rem;padding:5px 10px;border-radius:999px;backdrop-filter:blur(4px);opacity:0;transform:translateY(4px);transition:.25s;pointer-events:none}
+  .ww-card:hover .ww-badge{opacity:1;transform:translateY(0)}
+  .ww-badge svg{width:11px;height:11px;stroke:currentColor;fill:none;stroke-width:1.4}
+  .ww-label{position:absolute;inset:0;display:grid;place-items:center;letter-spacing:-.02em;font-family:Fraunces,serif;pointer-events:none;color:var(--ink)}
+  .ww-title{position:absolute;top:50%;left:8%;transform:translateY(-50%);letter-spacing:-.02em;font-family:Fraunces,serif;opacity:0;pointer-events:none;color:var(--ink)}
+  .ww-index{position:absolute;top:7.5%;right:3%;text-align:right;line-height:1.75;color:var(--muted-fg);list-style:none}
+  .ww-index button{background:none;border:none;cursor:pointer;color:inherit;font:inherit;transition:color .2s;padding:0}
+  .ww-index li.on button{color:var(--ink);font-weight:600}
+  .ww-hint{text-align:center;color:var(--muted);font-size:12.5px;padding:2px 0 8px}
+
+  /* ===== DEPOIMENTOS ===== */
+  .dep-bg{background:var(--paper);margin-top:0}
   .dep{max-width:1100px;margin:0 auto;padding:72px 24px}
   .dep .sec-h{text-align:center;margin-bottom:28px}
   .dep .sec-h .k{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:600}
@@ -99,7 +137,7 @@
   @media(min-width:768px){.tc-grid{grid-template-columns:1fr 1fr}.tc-arrows{padding-top:0}}
   @media(max-width:520px){.tc-images{height:18rem}.tc-quote{min-height:11rem}}
 
-  /* NEWSLETTER / CTA */
+  /* NEWSLETTER */
   .news{padding:80px 0}
   .news .box{background:var(--ink);color:#f3efe6;border-radius:20px;padding:50px 44px;text-align:center}
   .news h2{color:#fff;font-size:clamp(26px,3.4vw,40px)}
@@ -144,13 +182,12 @@
 <section class="feat">
   <div class="wrap">
     <a href="https://www.gruponf.com.br/blog" target="_blank" rel="noopener">
-      <div class="im" style="background-image:url('img/prod-textur.jpg')"></div>
+      <div class="im"><img src="img/prod-textur.jpg" alt="Impressão têxtil Grupo NF"></div>
       <div class="bd">
-        <span class="tag">Em destaque</span>
-        <h2>Malharias e tinturarias: Grupo NF, líder em impressão têxtil</h2>
+        <div class="metarow"><span class="tag">Em destaque</span><span class="d">29 ago 2025</span></div>
+        <h2><span class="ul">Malharias e tinturarias: Grupo NF, líder em impressão têxtil</span></h2>
         <p>Como as soluções gráficas da NF viraram referência para a indústria têxtil — da cartela de cores ao mostruário que fecha venda.</p>
-        <div class="meta">29 ago 2025 · Soluções gráficas</div>
-        <div class="readmore">Ler artigo →</div>
+        <span class="readbtn">Ler artigo <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </div>
     </a>
   </div>
@@ -166,67 +203,57 @@
     <div class="grid">
 
       <a class="pc" href="https://www.gruponf.com.br/blog" target="_blank" rel="noopener">
-        <div class="im" style="background-image:url('img/prod-leque.jpg')"></div>
-        <div class="bd">
-          <span class="tag">Tendências</span>
-          <h3>Tendências do mercado têxtil para 2027</h3>
-          <p>As mudanças na velocidade e nos processos da indústria — e como se preparar para elas.</p>
-          <div class="meta">13 jul</div>
-        </div>
+        <div class="im"><img src="img/prod-leque.jpg" alt="Leques de cartela de cores"></div>
+        <div class="bd"><span class="tag">Tendências</span><h3><span class="ul">Tendências do mercado têxtil para 2027</span></h3><p>As mudanças na velocidade e nos processos da indústria — e como se preparar para elas.</p><div class="d">13 jul</div></div>
       </a>
 
       <a class="pc" href="https://www.gruponf.com.br/blog" target="_blank" rel="noopener">
-        <div class="im" style="background-image:url('img/prod-books.jpg')"></div>
-        <div class="bd">
-          <span class="tag">Mostruário</span>
-          <h3>A importância do mostruário nas feiras têxteis</h3>
-          <p>Apresentar a coleção do jeito certo é o que separa o estande que vende do que só decora.</p>
-          <div class="meta">19 jun</div>
-        </div>
+        <div class="im"><img src="img/prod-books.jpg" alt="Mostruários e books"></div>
+        <div class="bd"><span class="tag">Mostruário</span><h3><span class="ul">A importância do mostruário nas feiras têxteis</span></h3><p>Apresentar a coleção do jeito certo é o que separa o estande que vende do que só decora.</p><div class="d">19 jun</div></div>
       </a>
 
       <a class="pc" href="https://www.gruponf.com.br/blog" target="_blank" rel="noopener">
-        <div class="im" style="background-image:url('img/fachada.jpg')"></div>
-        <div class="bd">
-          <span class="tag">Sustentabilidade</span>
-          <h3>Como a sustentabilidade transforma a indústria têxtil</h3>
-          <p>Energia limpa, papel de origem responsável e práticas que já fazem parte da nossa produção.</p>
-          <div class="meta">8 jun</div>
-        </div>
+        <div class="im"><img src="img/fachada.jpg" alt="Sede Grupo NF"></div>
+        <div class="bd"><span class="tag">Sustentabilidade</span><h3><span class="ul">Como a sustentabilidade transforma a indústria têxtil</span></h3><p>Energia limpa, papel de origem responsável e práticas que já fazem parte da nossa produção.</p><div class="d">8 jun</div></div>
       </a>
 
       <a class="pc" href="https://www.gruponf.com.br/blog" target="_blank" rel="noopener">
-        <div class="im" style="background-image:url('img/prod-sacolas.jpg')"></div>
-        <div class="bd">
-          <span class="tag">Embalagem</span>
-          <h3>Como o toque sensorial transforma embalagens</h3>
-          <p>Textura e experiência tátil: por que o que se sente na mão também vende.</p>
-          <div class="meta">13 abr</div>
-        </div>
+        <div class="im"><img src="img/prod-sacolas.jpg" alt="Sacolas personalizadas"></div>
+        <div class="bd"><span class="tag">Embalagem</span><h3><span class="ul">Como o toque sensorial transforma embalagens</span></h3><p>Textura e experiência tátil: por que o que se sente na mão também vende.</p><div class="d">13 abr</div></div>
       </a>
 
       <a class="pc" href="https://www.gruponf.com.br/blog" target="_blank" rel="noopener">
-        <div class="im" style="background-image:url('img/prod-cinta.jpg')"></div>
-        <div class="bd">
-          <span class="tag">Varejo</span>
-          <h3>A importância das sacolas no varejo</h3>
-          <p>Marketing que anda pela rua: a sacola personalizada como extensão da marca.</p>
-          <div class="meta">16 mar</div>
-        </div>
+        <div class="im"><img src="img/prod-cinta.jpg" alt="Cintas e etiquetas"></div>
+        <div class="bd"><span class="tag">Varejo</span><h3><span class="ul">A importância das sacolas no varejo</span></h3><p>Marketing que anda pela rua: a sacola personalizada como extensão da marca.</p><div class="d">16 mar</div></div>
       </a>
 
       <a class="pc" href="https://www.gruponf.com.br/blog" target="_blank" rel="noopener">
-        <div class="im" style="background-image:url('img/prod-tags.jpg')"></div>
-        <div class="bd">
-          <span class="tag">Produção</span>
-          <h3>Offset ou impressão digital?</h3>
-          <p>Comparação entre as duas tecnologias para você escolher a certa para cada material.</p>
-          <div class="meta">2 jul</div>
-        </div>
+        <div class="im"><img src="img/prod-tags.jpg" alt="Tags e lapelas"></div>
+        <div class="bd"><span class="tag">Produção</span><h3><span class="ul">Offset ou impressão digital?</span></h3><p>Comparação entre as duas tecnologias para você escolher a certa para cada material.</p><div class="d">2 jul</div></div>
       </a>
 
     </div>
   </div>
+</section>
+
+<!-- WORKS WHEEL: PRODUTOS -->
+<section class="ww-wrap" id="produtos">
+  <div class="ww-inner">
+    <div class="ww-head">
+      <div class="k">Nossa linha</div>
+      <h2>Produtos do Grupo NF</h2>
+      <p>Role, arraste ou use as setas para girar a roda</p>
+    </div>
+  </div>
+  <div class="ww" id="ww">
+    <div class="ww-stage" id="wwStage" tabindex="0" role="listbox" aria-label="Produtos do Grupo NF">
+      <div class="ww-wheel" id="wwWheel"></div>
+    </div>
+    <div class="ww-label" id="wwLabel">Produtos NF</div>
+    <div class="ww-title" id="wwTitle"></div>
+    <ol class="ww-index" id="wwIndex"></ol>
+  </div>
+  <div class="ww-hint">↕ role sobre a roda · arraste · ou clique num produto na lista</div>
 </section>
 
 <!-- DEPOIMENTOS -->
@@ -277,29 +304,143 @@
 <div class="proto">Protótipo · Cardô</div>
 
 <script>
-var testimonials = [
-  {quote:"Excelente qualidade nos materiais e atendimento impecável. As cartelas ficaram perfeitas, exatamente como pedimos.",name:"Fabrízio Ramos",designation:"Avaliação no Google",src:"img/prod-cartela.jpg"},
-  {quote:"Empresa séria e comprometida com prazos. O acabamento dos mostruários superou nossa expectativa.",name:"Ana Claudia Paloschi",designation:"Avaliação no Google",src:"img/prod-books.jpg"},
-  {quote:"Parceria de anos. Sempre entregam a cor certa e com um padrão de qualidade que faz diferença na venda.",name:"Amanda de Castilhos",designation:"Avaliação no Google",src:"img/prod-leque.jpg"}
-];
-var active=0,len=testimonials.length,containerWidth=1200,autoplay=true,timer=null;
-var imagesEl=document.getElementById('tcImages'),nameEl=document.getElementById('tcName'),desigEl=document.getElementById('tcDesig'),quoteEl=document.getElementById('tcQuote');
-testimonials.forEach(function(t){var im=document.createElement('img');im.src=t.src;im.alt=t.name;imagesEl.appendChild(im);});
-var imgs=imagesEl.querySelectorAll('img');
-function calculateGap(w){var mnW=1024,mxW=1456,mnG=60,mxG=86;if(w<=mnW)return mnG;if(w>=mxW)return Math.max(mnG,mxG+0.06018*(w-mxW));return mnG+(mxG-mnG)*((w-mnW)/(mxW-mnW));}
-function applyStyles(){var gap=calculateGap(containerWidth),su=gap*0.8;imgs.forEach(function(im,i){var a=i===active,l=(active-1+len)%len===i,r=(active+1)%len===i;im.style.transition='all .8s cubic-bezier(.4,2,.3,1)';if(a){im.style.zIndex=3;im.style.opacity=1;im.style.pointerEvents='auto';im.style.transform='translateX(0) translateY(0) scale(1) rotateY(0deg)';}else if(l){im.style.zIndex=2;im.style.opacity=1;im.style.pointerEvents='auto';im.style.transform='translateX(-'+gap+'px) translateY(-'+su+'px) scale(.85) rotateY(15deg)';}else if(r){im.style.zIndex=2;im.style.opacity=1;im.style.pointerEvents='auto';im.style.transform='translateX('+gap+'px) translateY(-'+su+'px) scale(.85) rotateY(-15deg)';}else{im.style.zIndex=1;im.style.opacity=0;im.style.pointerEvents='none';}});}
-function renderText(){var t=testimonials[active];nameEl.textContent=t.name;desigEl.textContent=t.designation;quoteEl.innerHTML='';t.quote.split(' ').forEach(function(word,i){var sp=document.createElement('span');sp.className='w';sp.textContent=word+' ';sp.style.animationDelay=(0.025*i)+'s';quoteEl.appendChild(sp);});}
-function update(){applyStyles();renderText();}
-function next(){active=(active+1)%len;update();reset();}
-function prev(){active=(active-1+len)%len;update();reset();}
-function reset(){if(timer){clearInterval(timer);if(autoplay)start();}}
-function start(){timer=setInterval(function(){active=(active+1)%len;update();},5000);}
-function measure(){if(imagesEl)containerWidth=imagesEl.offsetWidth;applyStyles();}
-window.addEventListener('resize',measure);
-window.addEventListener('keydown',function(e){if(e.key==='ArrowLeft')prev();if(e.key==='ArrowRight')next();});
-document.getElementById('tcPrev').addEventListener('click',prev);
-document.getElementById('tcNext').addEventListener('click',next);
-measure();update();if(autoplay)start();
+/* ===== Depoimentos (carrossel 3D) ===== */
+(function(){
+  var testimonials=[
+    {quote:"Excelente qualidade nos materiais e atendimento impecável. As cartelas ficaram perfeitas, exatamente como pedimos.",name:"Fabrízio Ramos",designation:"Avaliação no Google",src:"img/prod-cartela.jpg"},
+    {quote:"Empresa séria e comprometida com prazos. O acabamento dos mostruários superou nossa expectativa.",name:"Ana Claudia Paloschi",designation:"Avaliação no Google",src:"img/prod-books.jpg"},
+    {quote:"Parceria de anos. Sempre entregam a cor certa e com um padrão de qualidade que faz diferença na venda.",name:"Amanda de Castilhos",designation:"Avaliação no Google",src:"img/prod-leque.jpg"}
+  ];
+  var active=0,len=testimonials.length,cw=1200,timer=null;
+  var imagesEl=document.getElementById('tcImages'),nameEl=document.getElementById('tcName'),desigEl=document.getElementById('tcDesig'),quoteEl=document.getElementById('tcQuote');
+  testimonials.forEach(function(t){var im=document.createElement('img');im.src=t.src;im.alt=t.name;imagesEl.appendChild(im);});
+  var imgs=imagesEl.querySelectorAll('img');
+  function gapf(w){var a=1024,b=1456,mn=60,mx=86;if(w<=a)return mn;if(w>=b)return Math.max(mn,mx+0.06018*(w-b));return mn+(mx-mn)*((w-a)/(b-a));}
+  function styles(){var gap=gapf(cw),su=gap*0.8;imgs.forEach(function(im,i){var A=i===active,L=(active-1+len)%len===i,R=(active+1)%len===i;im.style.transition='all .8s cubic-bezier(.4,2,.3,1)';if(A){im.style.zIndex=3;im.style.opacity=1;im.style.pointerEvents='auto';im.style.transform='translateX(0) translateY(0) scale(1) rotateY(0deg)';}else if(L){im.style.zIndex=2;im.style.opacity=1;im.style.pointerEvents='auto';im.style.transform='translateX(-'+gap+'px) translateY(-'+su+'px) scale(.85) rotateY(15deg)';}else if(R){im.style.zIndex=2;im.style.opacity=1;im.style.pointerEvents='auto';im.style.transform='translateX('+gap+'px) translateY(-'+su+'px) scale(.85) rotateY(-15deg)';}else{im.style.zIndex=1;im.style.opacity=0;im.style.pointerEvents='none';}});}
+  function text(){var t=testimonials[active];nameEl.textContent=t.name;desigEl.textContent=t.designation;quoteEl.innerHTML='';t.quote.split(' ').forEach(function(word,i){var sp=document.createElement('span');sp.className='w';sp.textContent=word+' ';sp.style.animationDelay=(0.025*i)+'s';quoteEl.appendChild(sp);});}
+  function upd(){styles();text();}
+  function nx(){active=(active+1)%len;upd();rst();}
+  function pv(){active=(active-1+len)%len;upd();rst();}
+  function rst(){if(timer){clearInterval(timer);st();}}
+  function st(){timer=setInterval(function(){active=(active+1)%len;upd();},5000);}
+  function meas(){if(imagesEl)cw=imagesEl.offsetWidth;styles();}
+  window.addEventListener('resize',meas);
+  document.getElementById('tcPrev').addEventListener('click',pv);
+  document.getElementById('tcNext').addEventListener('click',nx);
+  meas();upd();st();
+})();
+
+/* ===== WorksWheel (produtos) — porte vanilla ===== */
+(function(){
+  var PRODUCTS=[
+    {title:"Cartelas de cores", image:"img/prod-cartela.jpg", href:"index.html#produtos"},
+    {title:"Leques", image:"img/prod-leque.jpg", href:"index.html#produtos"},
+    {title:"Mostruários & books", image:"img/prod-books.jpg", href:"index.html#produtos"},
+    {title:"Lapelas", image:"img/prod-lapela.jpg", href:"index.html#produtos"},
+    {title:"Cintas & etiquetas", image:"img/prod-cinta.jpg", href:"index.html#produtos"},
+    {title:"Sacolas", image:"img/prod-sacolas.jpg", href:"index.html#produtos"},
+    {title:"Tags", image:"img/prod-tags.jpg", href:"index.html#produtos"},
+    {title:"Texturas & relevos", image:"img/prod-textur.jpg", href:"index.html#produtos"}
+  ];
+  var CARD_H=0.38,CARD_MAX_W=0.34,CARD_RATIO=1.45,STEP=40,DRUM=2.22,LENS=2.7,RING_R=1.14,BOW=1.82,TITLE=0.124,INDEX=0.04,CULL=1.6,WHEEL_UNITS=900,DRAG_UNITS=420,SETTLE=140,EASE=0.12;
+  var clamp=function(v,lo,hi){return Math.min(hi,Math.max(lo,v));};
+  var lerp=function(a,b,t){return a+(b-a)*t;};
+  var rad=function(d){return d*Math.PI/180;};
+  var bowAt=function(dd,bow){return -bow*(1-Math.cos(rad(dd)));};
+  function place(ringDeg,drumDeg,ringR,drumR,bow,m){
+    return 'translateX('+(m*bowAt(drumDeg,bow))+'px)'+
+           ' rotateZ('+((1-m)*ringDeg)+'deg) translateY('+(-(1-m)*ringR)+'px)'+
+           ' rotateX('+(m*drumDeg)+'deg) translateZ('+(m*drumR)+'px)';
+  }
+  var stage=document.getElementById('wwStage'),wheel=document.getElementById('wwWheel'),
+      labelEl=document.getElementById('wwLabel'),titleEl=document.getElementById('wwTitle'),indexEl=document.getElementById('wwIndex');
+  var count=PRODUCTS.length,last=Math.max(count-1,0);
+  var turn=0,target=0,active=-1,dragY=null,settling=0;
+  var sw=0,sh=0;
+  var cards=[],faces=[];
+
+  // build cards
+  PRODUCTS.forEach(function(p,i){
+    var el=document.createElement(p.href?'a':'div');
+    el.className='ww-card';el.setAttribute('role','option');
+    if(p.href){el.href=p.href;}
+    el.id='ww-'+i;
+    var face=document.createElement('span');face.className='ww-face';
+    var img=document.createElement('img');img.src=p.image;img.alt=p.title;img.draggable=false;
+    face.appendChild(img);
+    var badge=document.createElement('span');badge.className='ww-badge';
+    badge.innerHTML='<svg viewBox="0 0 12 12"><path d="M3 9 9 3M4 3h5v5" stroke-linecap="round" stroke-linejoin="round"/></svg>Ver';
+    if(p.href) face.appendChild(badge);
+    el.appendChild(face);
+    wheel.appendChild(el);
+    cards.push(el);faces.push(face);
+    // index item
+    var li=document.createElement('li');
+    var btn=document.createElement('button');btn.type='button';btn.textContent=p.title;
+    (function(idx){btn.addEventListener('click',function(){to(idx+1);});})(i);
+    li.appendChild(btn);indexEl.appendChild(li);
+  });
+  var idxItems=indexEl.querySelectorAll('li');
+
+  function to(n){target=clamp(n,0,last+1);}
+
+  var metrics={};
+  function measure(){
+    sw=stage.clientWidth;sh=stage.clientHeight;
+    var cardW=Math.min(sh*CARD_H*CARD_RATIO, sw*CARD_MAX_W);
+    var cardH=cardW/CARD_RATIO;
+    var drumR=cardH*DRUM, ringR=cardH*RING_R;
+    var ringScale=count?clamp(((2*Math.PI*ringR)/count)*0.82/(cardW||1),0.16,1):1;
+    metrics={cardW:cardW,cardH:cardH,ringR:ringR,ringScale:ringScale,drumR:drumR,bow:cardH*BOW,depth:cardH*LENS,title:cardH*TITLE,index:cardH*INDEX};
+    stage.style.perspective=metrics.depth+'px';
+    cards.forEach(function(c){c.style.width=cardW+'px';c.style.height=cardH+'px';c.style.marginLeft=(-cardW/2)+'px';c.style.marginTop=(-cardH/2)+'px';});
+    labelEl.style.fontSize=metrics.title+'px';
+    titleEl.style.fontSize=metrics.title+'px';
+    indexEl.style.fontSize=metrics.index+'px';
+  }
+  var ro=new ResizeObserver(measure);ro.observe(stage);
+  measure();
+
+  function draw(){
+    requestAnimationFrame(draw);
+    if(!sh)return;
+    var gap=target-turn;
+    if(Math.abs(gap)<0.0005)turn=target;else turn+=gap*EASE;
+    var t=turn,m=clamp(t,0,1),pos=Math.max(0,t-1);
+    var ringR=metrics.ringR,ringScale=metrics.ringScale,drumR=metrics.drumR,bow=metrics.bow;
+    wheel.style.transform='translateZ('+(-m*drumR)+'px)';
+    for(var i=0;i<count;i++){
+      var d=i-pos,drumDeg=d*STEP,card=cards[i];
+      card.style.transform=place(d*(360/count),drumDeg,ringR,drumR,bow,m);
+      card.style.opacity=(m>0.5&&Math.abs(d)>CULL)?'0':'1';
+      card.style.zIndex=String(Math.round(100-Math.abs(d)*2));
+      faces[i].style.transform='scale('+lerp(ringScale,1,m)+')';
+    }
+    labelEl.style.opacity=String(1-m);
+    titleEl.style.opacity=String(m);
+    var near=clamp(Math.round(pos),0,last);
+    if(near!==active){
+      active=near;
+      titleEl.textContent=PRODUCTS[active]?PRODUCTS[active].title:'';
+      idxItems.forEach(function(li,i){li.classList.toggle('on',i===active);});
+      cards.forEach(function(c,i){c.setAttribute('aria-selected',i===active);});
+    }
+  }
+  requestAnimationFrame(draw);
+
+  stage.addEventListener('wheel',function(e){
+    var next=target+e.deltaY/WHEEL_UNITS;
+    if(next>0&&next<last+1)e.preventDefault();
+    to(next);
+    window.clearTimeout(settling);
+    settling=window.setTimeout(function(){to(Math.round(target));},SETTLE);
+  },{passive:false});
+
+  stage.addEventListener('pointerdown',function(e){dragY=e.clientY;stage.setPointerCapture(e.pointerId);});
+  stage.addEventListener('pointermove',function(e){if(dragY===null)return;to(target+(dragY-e.clientY)/DRAG_UNITS);dragY=e.clientY;});
+  stage.addEventListener('pointerup',function(){dragY=null;if(target>1)to(Math.round(target));});
+  stage.addEventListener('keydown',function(e){if(e.key==='ArrowDown')to(Math.round(target)+1);else if(e.key==='ArrowUp')to(Math.round(target)-1);else return;e.preventDefault();});
+})();
 </script>
 </body>
 </html>
