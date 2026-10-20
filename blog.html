@@ -87,30 +87,29 @@
   .pc p{font-size:14px;color:var(--muted);flex:1}
   .pc .d{margin-top:14px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 
-  /* ===== WORKS WHEEL (porte vanilla) — produtos NF ===== */
-  .ww-wrap{background:var(--paper2);margin-top:50px}
-  .ww-inner{max-width:1180px;margin:0 auto;padding:60px 28px 20px}
-  .ww-head{text-align:center;margin-bottom:6px}
-  .ww-head .k{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:600}
-  .ww-head h2{font-size:clamp(26px,3.6vw,40px);margin-top:12px}
-  .ww-head p{color:var(--muted);margin-top:10px;font-size:14.5px}
-  .ww{--background:var(--paper2);--foreground:var(--ink);--muted-fg:#8a8374;
-      position:relative;height:clamp(460px,72vh,720px);width:100%;overflow:hidden;user-select:none;color:var(--foreground)}
-  .ww-stage{position:absolute;inset:0;outline:none;cursor:grab;touch-action:pan-x}
-  .ww-stage:active{cursor:grabbing}
-  .ww-wheel{position:absolute;top:50%;left:50%;transform-style:preserve-3d}
-  .ww-card{position:absolute;backface-visibility:hidden}
-  .ww-face{position:relative;display:block;width:100%;height:100%;overflow:hidden;border-radius:12px;background:var(--sand);box-shadow:0 18px 40px -18px rgba(27,29,32,.55)}
-  .ww-face img{width:100%;height:100%;object-fit:cover;display:block}
-  .ww-badge{position:absolute;right:12px;bottom:12px;display:flex;align-items:center;gap:5px;background:rgba(247,245,239,.85);color:var(--ink);font-size:.72rem;padding:5px 10px;border-radius:999px;backdrop-filter:blur(4px);opacity:0;transform:translateY(4px);transition:.25s;pointer-events:none}
-  .ww-card:hover .ww-badge{opacity:1;transform:translateY(0)}
-  .ww-badge svg{width:11px;height:11px;stroke:currentColor;fill:none;stroke-width:1.4}
-  .ww-label{position:absolute;inset:0;display:grid;place-items:center;letter-spacing:-.02em;font-family:Fraunces,serif;pointer-events:none;color:var(--ink)}
-  .ww-title{position:absolute;top:50%;left:8%;transform:translateY(-50%);letter-spacing:-.02em;font-family:Fraunces,serif;opacity:0;pointer-events:none;color:var(--ink)}
-  .ww-index{position:absolute;top:7.5%;right:3%;text-align:right;line-height:1.75;color:var(--muted-fg);list-style:none}
-  .ww-index button{background:none;border:none;cursor:pointer;color:inherit;font:inherit;transition:color .2s;padding:0}
-  .ww-index li.on button{color:var(--ink);font-weight:600}
-  .ww-hint{text-align:center;color:var(--muted);font-size:12.5px;padding:2px 0 8px}
+  /* ===== CARROSSEL DE PRODUTOS ===== */
+  .pcar-wrap{background:var(--paper2);margin-top:50px}
+  .pcar{max-width:1180px;margin:0 auto;padding:62px 28px 70px}
+  .pcar-head{text-align:center;margin-bottom:30px}
+  .pcar-head .k{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .pcar-head h2{font-size:clamp(26px,3.6vw,40px);margin-top:12px}
+  .pcar-head p{color:var(--muted);margin-top:10px;font-size:14.5px}
+  .pcar-track{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:6px 2px 14px;-ms-overflow-style:none;scrollbar-width:none;cursor:grab}
+  .pcar-track::-webkit-scrollbar{display:none}
+  .pcar-track.drag{cursor:grabbing;scroll-behavior:auto}
+  .pcard{flex:0 0 clamp(236px,27vw,296px);scroll-snap-align:start;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:transform .3s,box-shadow .3s;text-decoration:none;color:inherit}
+  .pcard:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(40,34,20,.13)}
+  .pcard .im{aspect-ratio:4/5;overflow:hidden}
+  .pcard .im img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;pointer-events:none}
+  .pcard:hover .im img{transform:scale(1.06)}
+  .pcard .bd{padding:16px 18px 20px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .pcard h3{font-size:18px}
+  .pcard .go{color:var(--green);font-weight:600;font-size:13.5px;white-space:nowrap;transition:transform .3s}
+  .pcard:hover .go{transform:translateX(3px)}
+  .pcar-nav{display:flex;justify-content:center;gap:12px;margin-top:18px}
+  .pcar-btn{width:2.7rem;height:2.7rem;border-radius:50%;border:none;background:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background-color .3s}
+  .pcar-btn:hover{background:var(--green)}
+  .pcar-btn svg{width:22px;height:22px;stroke:#f3efe6;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
 
   /* ===== DEPOIMENTOS ===== */
   .dep-bg{background:var(--paper);margin-top:0}
@@ -236,24 +235,29 @@
   </div>
 </section>
 
-<!-- WORKS WHEEL: PRODUTOS -->
-<section class="ww-wrap" id="produtos">
-  <div class="ww-inner">
-    <div class="ww-head">
+<!-- CARROSSEL DE PRODUTOS -->
+<section class="pcar-wrap" id="produtos">
+  <div class="pcar">
+    <div class="pcar-head">
       <div class="k">Nossa linha</div>
       <h2>Produtos do Grupo NF</h2>
-      <p>Role, arraste ou use as setas para girar a roda</p>
+      <p>Arraste para o lado ou use as setas</p>
+    </div>
+    <div class="pcar-track" id="pcarTrack">
+      <a class="pcard" href="index.html#produtos"><div class="im"><img src="img/prod-cartela.jpg" alt="Cartelas de cores"></div><div class="bd"><h3>Cartelas de cores</h3><span class="go">Ver →</span></div></a>
+      <a class="pcard" href="index.html#produtos"><div class="im"><img src="img/prod-leque.jpg" alt="Leques"></div><div class="bd"><h3>Leques</h3><span class="go">Ver →</span></div></a>
+      <a class="pcard" href="index.html#produtos"><div class="im"><img src="img/prod-books.jpg" alt="Mostruários e books"></div><div class="bd"><h3>Mostruários &amp; books</h3><span class="go">Ver →</span></div></a>
+      <a class="pcard" href="index.html#produtos"><div class="im"><img src="img/prod-lapela.jpg" alt="Lapelas"></div><div class="bd"><h3>Lapelas</h3><span class="go">Ver →</span></div></a>
+      <a class="pcard" href="index.html#produtos"><div class="im"><img src="img/prod-cinta.jpg" alt="Cintas e etiquetas"></div><div class="bd"><h3>Cintas &amp; etiquetas</h3><span class="go">Ver →</span></div></a>
+      <a class="pcard" href="index.html#produtos"><div class="im"><img src="img/prod-sacolas.jpg" alt="Sacolas"></div><div class="bd"><h3>Sacolas</h3><span class="go">Ver →</span></div></a>
+      <a class="pcard" href="index.html#produtos"><div class="im"><img src="img/prod-tags.jpg" alt="Tags"></div><div class="bd"><h3>Tags</h3><span class="go">Ver →</span></div></a>
+      <a class="pcard" href="index.html#produtos"><div class="im"><img src="img/prod-textur.jpg" alt="Texturas e relevos"></div><div class="bd"><h3>Texturas &amp; relevos</h3><span class="go">Ver →</span></div></a>
+    </div>
+    <div class="pcar-nav">
+      <button class="pcar-btn" id="pcarPrev" aria-label="Anterior"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+      <button class="pcar-btn" id="pcarNext" aria-label="Próximo"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
     </div>
   </div>
-  <div class="ww" id="ww">
-    <div class="ww-stage" id="wwStage" tabindex="0" role="listbox" aria-label="Produtos do Grupo NF">
-      <div class="ww-wheel" id="wwWheel"></div>
-    </div>
-    <div class="ww-label" id="wwLabel">Produtos NF</div>
-    <div class="ww-title" id="wwTitle"></div>
-    <ol class="ww-index" id="wwIndex"></ol>
-  </div>
-  <div class="ww-hint">↕ role sobre a roda · arraste · ou clique num produto na lista</div>
 </section>
 
 <!-- DEPOIMENTOS -->
@@ -330,116 +334,22 @@
   meas();upd();st();
 })();
 
-/* ===== WorksWheel (produtos) — porte vanilla ===== */
+/* ===== Carrossel de produtos ===== */
 (function(){
-  var PRODUCTS=[
-    {title:"Cartelas de cores", image:"img/prod-cartela.jpg", href:"index.html#produtos"},
-    {title:"Leques", image:"img/prod-leque.jpg", href:"index.html#produtos"},
-    {title:"Mostruários & books", image:"img/prod-books.jpg", href:"index.html#produtos"},
-    {title:"Lapelas", image:"img/prod-lapela.jpg", href:"index.html#produtos"},
-    {title:"Cintas & etiquetas", image:"img/prod-cinta.jpg", href:"index.html#produtos"},
-    {title:"Sacolas", image:"img/prod-sacolas.jpg", href:"index.html#produtos"},
-    {title:"Tags", image:"img/prod-tags.jpg", href:"index.html#produtos"},
-    {title:"Texturas & relevos", image:"img/prod-textur.jpg", href:"index.html#produtos"}
-  ];
-  var CARD_H=0.38,CARD_MAX_W=0.34,CARD_RATIO=1.45,STEP=40,DRUM=2.22,LENS=2.7,RING_R=1.14,BOW=1.82,TITLE=0.124,INDEX=0.04,CULL=1.6,WHEEL_UNITS=900,DRAG_UNITS=420,SETTLE=140,EASE=0.12;
-  var clamp=function(v,lo,hi){return Math.min(hi,Math.max(lo,v));};
-  var lerp=function(a,b,t){return a+(b-a)*t;};
-  var rad=function(d){return d*Math.PI/180;};
-  var bowAt=function(dd,bow){return -bow*(1-Math.cos(rad(dd)));};
-  function place(ringDeg,drumDeg,ringR,drumR,bow,m){
-    return 'translateX('+(m*bowAt(drumDeg,bow))+'px)'+
-           ' rotateZ('+((1-m)*ringDeg)+'deg) translateY('+(-(1-m)*ringR)+'px)'+
-           ' rotateX('+(m*drumDeg)+'deg) translateZ('+(m*drumR)+'px)';
-  }
-  var stage=document.getElementById('wwStage'),wheel=document.getElementById('wwWheel'),
-      labelEl=document.getElementById('wwLabel'),titleEl=document.getElementById('wwTitle'),indexEl=document.getElementById('wwIndex');
-  var count=PRODUCTS.length,last=Math.max(count-1,0);
-  var turn=0,target=0,active=-1,dragY=null,settling=0;
-  var sw=0,sh=0;
-  var cards=[],faces=[];
-
-  // build cards
-  PRODUCTS.forEach(function(p,i){
-    var el=document.createElement(p.href?'a':'div');
-    el.className='ww-card';el.setAttribute('role','option');
-    if(p.href){el.href=p.href;}
-    el.id='ww-'+i;
-    var face=document.createElement('span');face.className='ww-face';
-    var img=document.createElement('img');img.src=p.image;img.alt=p.title;img.draggable=false;
-    face.appendChild(img);
-    var badge=document.createElement('span');badge.className='ww-badge';
-    badge.innerHTML='<svg viewBox="0 0 12 12"><path d="M3 9 9 3M4 3h5v5" stroke-linecap="round" stroke-linejoin="round"/></svg>Ver';
-    if(p.href) face.appendChild(badge);
-    el.appendChild(face);
-    wheel.appendChild(el);
-    cards.push(el);faces.push(face);
-    // index item
-    var li=document.createElement('li');
-    var btn=document.createElement('button');btn.type='button';btn.textContent=p.title;
-    (function(idx){btn.addEventListener('click',function(){to(idx+1);});})(i);
-    li.appendChild(btn);indexEl.appendChild(li);
-  });
-  var idxItems=indexEl.querySelectorAll('li');
-
-  function to(n){target=clamp(n,0,last+1);}
-
-  var metrics={};
-  function measure(){
-    sw=stage.clientWidth;sh=stage.clientHeight;
-    var cardW=Math.min(sh*CARD_H*CARD_RATIO, sw*CARD_MAX_W);
-    var cardH=cardW/CARD_RATIO;
-    var drumR=cardH*DRUM, ringR=cardH*RING_R;
-    var ringScale=count?clamp(((2*Math.PI*ringR)/count)*0.82/(cardW||1),0.16,1):1;
-    metrics={cardW:cardW,cardH:cardH,ringR:ringR,ringScale:ringScale,drumR:drumR,bow:cardH*BOW,depth:cardH*LENS,title:cardH*TITLE,index:cardH*INDEX};
-    stage.style.perspective=metrics.depth+'px';
-    cards.forEach(function(c){c.style.width=cardW+'px';c.style.height=cardH+'px';c.style.marginLeft=(-cardW/2)+'px';c.style.marginTop=(-cardH/2)+'px';});
-    labelEl.style.fontSize=metrics.title+'px';
-    titleEl.style.fontSize=metrics.title+'px';
-    indexEl.style.fontSize=metrics.index+'px';
-  }
-  var ro=new ResizeObserver(measure);ro.observe(stage);
-  measure();
-
-  function draw(){
-    requestAnimationFrame(draw);
-    if(!sh)return;
-    var gap=target-turn;
-    if(Math.abs(gap)<0.0005)turn=target;else turn+=gap*EASE;
-    var t=turn,m=clamp(t,0,1),pos=Math.max(0,t-1);
-    var ringR=metrics.ringR,ringScale=metrics.ringScale,drumR=metrics.drumR,bow=metrics.bow;
-    wheel.style.transform='translateZ('+(-m*drumR)+'px)';
-    for(var i=0;i<count;i++){
-      var d=i-pos,drumDeg=d*STEP,card=cards[i];
-      card.style.transform=place(d*(360/count),drumDeg,ringR,drumR,bow,m);
-      card.style.opacity=(m>0.5&&Math.abs(d)>CULL)?'0':'1';
-      card.style.zIndex=String(Math.round(100-Math.abs(d)*2));
-      faces[i].style.transform='scale('+lerp(ringScale,1,m)+')';
-    }
-    labelEl.style.opacity=String(1-m);
-    titleEl.style.opacity=String(m);
-    var near=clamp(Math.round(pos),0,last);
-    if(near!==active){
-      active=near;
-      titleEl.textContent=PRODUCTS[active]?PRODUCTS[active].title:'';
-      idxItems.forEach(function(li,i){li.classList.toggle('on',i===active);});
-      cards.forEach(function(c,i){c.setAttribute('aria-selected',i===active);});
-    }
-  }
-  requestAnimationFrame(draw);
-
-  stage.addEventListener('wheel',function(e){
-    var next=target+e.deltaY/WHEEL_UNITS;
-    if(next>0&&next<last+1)e.preventDefault();
-    to(next);
-    window.clearTimeout(settling);
-    settling=window.setTimeout(function(){to(Math.round(target));},SETTLE);
-  },{passive:false});
-
-  stage.addEventListener('pointerdown',function(e){dragY=e.clientY;stage.setPointerCapture(e.pointerId);});
-  stage.addEventListener('pointermove',function(e){if(dragY===null)return;to(target+(dragY-e.clientY)/DRAG_UNITS);dragY=e.clientY;});
-  stage.addEventListener('pointerup',function(){dragY=null;if(target>1)to(Math.round(target));});
-  stage.addEventListener('keydown',function(e){if(e.key==='ArrowDown')to(Math.round(target)+1);else if(e.key==='ArrowUp')to(Math.round(target)-1);else return;e.preventDefault();});
+  var track=document.getElementById('pcarTrack');
+  if(!track)return;
+  function step(){var c=track.querySelector('.pcard');return c?(c.getBoundingClientRect().width+22):280;}
+  document.getElementById('pcarPrev').addEventListener('click',function(){track.scrollBy({left:-step(),behavior:'smooth'});});
+  document.getElementById('pcarNext').addEventListener('click',function(){track.scrollBy({left:step(),behavior:'smooth'});});
+  // arrastar com o mouse
+  var down=false,startX=0,startScroll=0,moved=0;
+  track.addEventListener('pointerdown',function(e){down=true;moved=0;startX=e.clientX;startScroll=track.scrollLeft;track.classList.add('drag');track.setPointerCapture(e.pointerId);});
+  track.addEventListener('pointermove',function(e){if(!down)return;var dx=e.clientX-startX;moved=Math.abs(dx);track.scrollLeft=startScroll-dx;});
+  function end(){down=false;track.classList.remove('drag');}
+  track.addEventListener('pointerup',end);
+  track.addEventListener('pointercancel',end);
+  // evita abrir o link quando foi arraste
+  track.querySelectorAll('.pcard').forEach(function(a){a.addEventListener('click',function(e){if(moved>6)e.preventDefault();});});
 })();
 </script>
 </body>
