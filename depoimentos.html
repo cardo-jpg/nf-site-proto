@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grupo NF — Depoimentos</title>
+<meta name="description" content="O que os clientes do Grupo NF dizem — carrossel de depoimentos para o blog/site institucional.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f3efe6; --card:#fffdf8; --ink:#1b1d20; --muted:#6b6557;
+    --line:#e2dccf; --green:#2f5d49; --sand:#d9cfb8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink);font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  .section{max-width:1100px;margin:0 auto;padding:72px 24px}
+  .sec-head{text-align:center;margin-bottom:28px}
+  .sec-head .k{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .sec-head h2{font-family:Fraunces,serif;font-weight:500;font-size:clamp(26px,3.6vw,40px);letter-spacing:-.01em;margin-top:12px}
+  .sec-head p{color:var(--muted);margin-top:10px;font-size:15px}
+
+  /* ===== Carrossel (porte vanilla do componente) ===== */
+  .tc{width:100%;max-width:56rem;margin:0 auto;padding:1rem}
+  .tc-grid{display:grid;gap:3.5rem}
+  .tc-images{position:relative;width:100%;height:24rem;perspective:1000px}
+  .tc-images img{position:absolute;width:100%;height:100%;object-fit:cover;border-radius:1.5rem;box-shadow:0 18px 40px rgba(40,34,20,.22)}
+  .tc-content{display:flex;flex-direction:column;justify-content:space-between}
+  .tc-name{font-family:Fraunces,serif;font-weight:600;font-size:1.6rem;color:var(--ink);margin-bottom:.25rem}
+  .tc-desig{color:var(--muted);font-size:.95rem;margin-bottom:1.1rem;display:flex;align-items:center;gap:8px}
+  .tc-stars{color:#e0a500;letter-spacing:2px}
+  .tc-quote{color:#403c34;font-size:1.12rem;line-height:1.75;min-height:8.5rem}
+  .tc-quote .w{display:inline-block;filter:blur(10px);opacity:0;transform:translateY(5px);animation:wordIn .5s forwards}
+  @keyframes wordIn{to{filter:blur(0);opacity:1;transform:translateY(0)}}
+  .tc-arrows{display:flex;gap:1.25rem;padding-top:2rem}
+  .tc-btn{width:2.7rem;height:2.7rem;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;background:var(--ink);transition:background-color .3s}
+  .tc-btn:hover{background:var(--green)}
+  .tc-btn svg{width:22px;height:22px;stroke:#f3efe6;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+  @media(min-width:768px){.tc-grid{grid-template-columns:1fr 1fr}.tc-arrows{padding-top:0}}
+  @media(max-width:520px){.tc-images{height:19rem}.tc-quote{min-height:11rem}}
+
+  .foot{text-align:center;color:var(--muted);font-size:13px;padding:10px 0 50px}
+  .proto{position:fixed;right:14px;bottom:14px;background:var(--green);color:#fff;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:7px 13px;border-radius:999px;opacity:.9}
+</style>
+</head>
+<body>
+
+<section class="section">
+  <div class="sec-head">
+    <div class="k">Quem confia na NF</div>
+    <h2>4,9 ★ em 152 avaliações no Google</h2>
+    <p>O que dizem os clientes que já produzem com a gente</p>
+  </div>
+
+  <div class="tc">
+    <div class="tc-grid">
+      <div class="tc-images" id="tcImages"></div>
+      <div class="tc-content">
+        <div>
+          <h3 class="tc-name" id="tcName"></h3>
+          <div class="tc-desig"><span class="tc-stars">★★★★★</span><span id="tcDesig"></span></div>
+          <p class="tc-quote" id="tcQuote"></p>
+        </div>
+        <div class="tc-arrows">
+          <button class="tc-btn" id="tcPrev" aria-label="Depoimento anterior">
+            <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <button class="tc-btn" id="tcNext" aria-label="Próximo depoimento">
+            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="foot">Protótipo de seção de depoimentos · para o blog/site do Grupo NF</div>
+<div class="proto">Protótipo · Cardô</div>
+
+<script>
+// Depoimentos reais do Google + imagem do produto que cada cliente elogia
+var testimonials = [
+  {
+    quote: "Excelente qualidade nos materiais e atendimento impecável. As cartelas ficaram perfeitas, exatamente como pedimos.",
+    name: "Fabrízio Ramos",
+    designation: "Avaliação no Google",
+    src: "img/prod-cartela.jpg"
+  },
+  {
+    quote: "Empresa séria e comprometida com prazos. O acabamento dos mostruários superou nossa expectativa.",
+    name: "Ana Claudia Paloschi",
+    designation: "Avaliação no Google",
+    src: "img/prod-books.jpg"
+  },
+  {
+    quote: "Parceria de anos. Sempre entregam a cor certa e com um padrão de qualidade que faz diferença na venda.",
+    name: "Amanda de Castilhos",
+    designation: "Avaliação no Google",
+    src: "img/prod-leque.jpg"
+  }
+];
+
+var active = 0;
+var len = testimonials.length;
+var containerWidth = 1200;
+var autoplay = true;
+var timer = null;
+
+var imagesEl = document.getElementById('tcImages');
+var nameEl = document.getElementById('tcName');
+var desigEl = document.getElementById('tcDesig');
+var quoteEl = document.getElementById('tcQuote');
+
+// cria os <img> uma vez
+testimonials.forEach(function(t){
+  var im = document.createElement('img');
+  im.src = t.src; im.alt = t.name;
+  imagesEl.appendChild(im);
+});
+var imgs = imagesEl.querySelectorAll('img');
+
+function calculateGap(width){
+  var minW=1024,maxW=1456,minG=60,maxG=86;
+  if(width<=minW) return minG;
+  if(width>=maxW) return Math.max(minG, maxG+0.06018*(width-maxW));
+  return minG+(maxG-minG)*((width-minW)/(maxW-minW));
+}
+
+function applyStyles(){
+  var gap = calculateGap(containerWidth);
+  var stickUp = gap*0.8;
+  imgs.forEach(function(im,index){
+    var isActive = index===active;
+    var isLeft = (active-1+len)%len===index;
+    var isRight = (active+1)%len===index;
+    im.style.transition='all .8s cubic-bezier(.4,2,.3,1)';
+    if(isActive){
+      im.style.zIndex=3; im.style.opacity=1; im.style.pointerEvents='auto';
+      im.style.transform='translateX(0) translateY(0) scale(1) rotateY(0deg)';
+    } else if(isLeft){
+      im.style.zIndex=2; im.style.opacity=1; im.style.pointerEvents='auto';
+      im.style.transform='translateX(-'+gap+'px) translateY(-'+stickUp+'px) scale(.85) rotateY(15deg)';
+    } else if(isRight){
+      im.style.zIndex=2; im.style.opacity=1; im.style.pointerEvents='auto';
+      im.style.transform='translateX('+gap+'px) translateY(-'+stickUp+'px) scale(.85) rotateY(-15deg)';
+    } else {
+      im.style.zIndex=1; im.style.opacity=0; im.style.pointerEvents='none';
+    }
+  });
+}
+
+function renderText(){
+  var t = testimonials[active];
+  nameEl.textContent = t.name;
+  desigEl.textContent = t.designation;
+  // animação de blur palavra por palavra
+  quoteEl.innerHTML='';
+  t.quote.split(' ').forEach(function(word,i){
+    var sp=document.createElement('span');
+    sp.className='w'; sp.textContent=word+' ';
+    sp.style.animationDelay=(0.025*i)+'s';
+    quoteEl.appendChild(sp);
+  });
+}
+
+function update(){ applyStyles(); renderText(); }
+
+function next(){ active=(active+1)%len; update(); resetAutoplay(); }
+function prev(){ active=(active-1+len)%len; update(); resetAutoplay(); }
+
+function resetAutoplay(){ if(timer){clearInterval(timer); if(autoplay) startAutoplay();} }
+function startAutoplay(){ timer=setInterval(function(){ active=(active+1)%len; update(); },5000); }
+
+function measure(){ if(imagesEl) containerWidth=imagesEl.offsetWidth; applyStyles(); }
+window.addEventListener('resize', measure);
+window.addEventListener('keydown', function(e){ if(e.key==='ArrowLeft') prev(); if(e.key==='ArrowRight') next(); });
+document.getElementById('tcPrev').addEventListener('click', prev);
+document.getElementById('tcNext').addEventListener('click', next);
+
+measure();
+update();
+if(autoplay) startAutoplay();
+</script>
+</body>
+</html>
