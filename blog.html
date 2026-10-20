@@ -111,30 +111,41 @@
   .pcar-btn:hover{background:var(--green)}
   .pcar-btn svg{width:22px;height:22px;stroke:#f3efe6;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
 
-  /* ===== DEPOIMENTOS ===== */
+  /* ===== DEPOIMENTOS (cards de avaliação do Google) ===== */
   .dep-bg{background:var(--paper);margin-top:0}
   .dep{max-width:1100px;margin:0 auto;padding:72px 24px}
   .dep .sec-h{text-align:center;margin-bottom:28px}
   .dep .sec-h .k{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:600}
   .dep .sec-h h2{font-size:clamp(26px,3.6vw,40px);margin-top:12px}
   .dep .sec-h p{color:var(--muted);margin-top:10px;font-size:15px}
-  .tc{width:100%;max-width:56rem;margin:0 auto;padding:1rem}
-  .tc-grid{display:grid;gap:3.5rem}
-  .tc-images{position:relative;width:100%;height:23rem;perspective:1000px}
-  .tc-images img{position:absolute;width:100%;height:100%;object-fit:cover;border-radius:1.5rem;box-shadow:0 18px 40px rgba(40,34,20,.22)}
-  .tc-content{display:flex;flex-direction:column;justify-content:space-between}
-  .tc-name{font-family:Fraunces,serif;font-weight:600;font-size:1.55rem;margin-bottom:.25rem}
-  .tc-desig{color:var(--muted);font-size:.95rem;margin-bottom:1.1rem;display:flex;align-items:center;gap:8px}
-  .tc-stars{color:#e0a500;letter-spacing:2px}
-  .tc-quote{color:#403c34;font-size:1.1rem;line-height:1.75;min-height:8.5rem}
-  .tc-quote .w{display:inline-block;filter:blur(10px);opacity:0;transform:translateY(5px);animation:wordIn .5s forwards}
+  .tc{width:100%;max-width:60rem;margin:0 auto;padding:1rem}
+  .tc-grid{display:grid;gap:3rem;align-items:center}
+  .tc-images{position:relative;width:100%;height:21rem;perspective:1200px}
+  .rcard{position:absolute;inset:0;background:#fff;border:1px solid var(--line);border-radius:1.1rem;box-shadow:0 20px 44px rgba(40,34,20,.18);padding:26px 28px;display:flex;flex-direction:column}
+  .rtop{display:flex;align-items:center;gap:12px}
+  .rav{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-family:Fraunces,serif;font-size:20px;flex:0 0 auto}
+  .rname{font-weight:600;font-size:16px;color:var(--ink);line-height:1.2}
+  .rsrc{font-size:12.5px;color:var(--muted)}
+  .gicon{width:22px;height:22px;margin-left:auto;flex:0 0 auto}
+  .rstars{color:#fbbc05;letter-spacing:2px;font-size:17px;margin:14px 0 10px}
+  .rtext{color:#3f3b32;font-size:15.5px;line-height:1.6;flex:1}
+  .rtext .w{display:inline-block;filter:blur(10px);opacity:0;transform:translateY(5px);animation:wordIn .5s forwards}
   @keyframes wordIn{to{filter:blur(0);opacity:1;transform:translateY(0)}}
-  .tc-arrows{display:flex;gap:1.25rem;padding-top:2rem}
+  .rdate{font-size:12.5px;color:var(--muted);margin-top:14px;display:flex;align-items:center;gap:6px}
+  /* bloco agregado */
+  .tc-content{display:flex;flex-direction:column;justify-content:center;gap:0}
+  .agg-num{font-family:Fraunces,serif;font-size:3.4rem;font-weight:600;line-height:1;color:var(--ink)}
+  .agg-stars{color:#fbbc05;letter-spacing:3px;font-size:1.3rem;margin:8px 0 10px}
+  .agg-sub{color:var(--muted);font-size:15px;max-width:300px}
+  .agg-cta{display:inline-flex;align-items:center;gap:9px;margin-top:20px;background:#fff;border:1px solid var(--line);color:var(--ink);font-weight:500;font-size:14.5px;padding:11px 18px;border-radius:999px;width:fit-content;transition:.2s}
+  .agg-cta:hover{border-color:var(--green);color:var(--green)}
+  .agg-cta .gicon{width:18px;height:18px;margin:0}
+  .tc-arrows{display:flex;gap:1.25rem;margin-top:26px}
   .tc-btn{width:2.7rem;height:2.7rem;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;background:var(--ink);transition:background-color .3s}
   .tc-btn:hover{background:var(--green)}
   .tc-btn svg{width:22px;height:22px;stroke:#f3efe6;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
-  @media(min-width:768px){.tc-grid{grid-template-columns:1fr 1fr}.tc-arrows{padding-top:0}}
-  @media(max-width:520px){.tc-images{height:18rem}.tc-quote{min-height:11rem}}
+  @media(min-width:768px){.tc-grid{grid-template-columns:1.1fr .9fr}}
+  @media(max-width:520px){.tc-images{height:24rem}}
 
   /* NEWSLETTER */
   .news{padding:80px 0}
@@ -272,14 +283,16 @@
       <div class="tc-grid">
         <div class="tc-images" id="tcImages"></div>
         <div class="tc-content">
-          <div>
-            <h3 class="tc-name" id="tcName"></h3>
-            <div class="tc-desig"><span class="tc-stars">★★★★★</span><span id="tcDesig"></span></div>
-            <p class="tc-quote" id="tcQuote"></p>
-          </div>
+          <div class="agg-num">4,9</div>
+          <div class="agg-stars">★★★★★</div>
+          <div class="agg-sub">Baseado em <strong>152 avaliações</strong> reais de clientes no Google.</div>
+          <a class="agg-cta" href="https://www.google.com/search?q=Grupo+NF+Brusque+avalia%C3%A7%C3%B5es" target="_blank" rel="noopener">
+            <svg class="gicon" viewBox="0 0 48 48"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18c-.44-1.32-.69-2.73-.69-4.18s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>
+            Ver no Google
+          </a>
           <div class="tc-arrows">
-            <button class="tc-btn" id="tcPrev" aria-label="Depoimento anterior"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
-            <button class="tc-btn" id="tcNext" aria-label="Próximo depoimento"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <button class="tc-btn" id="tcPrev" aria-label="Avaliação anterior"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+            <button class="tc-btn" id="tcNext" aria-label="Próxima avaliação"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
           </div>
         </div>
       </div>
@@ -308,26 +321,36 @@
 <div class="proto">Protótipo · Cardô</div>
 
 <script>
-/* ===== Depoimentos (carrossel 3D) ===== */
+/* ===== Depoimentos — cards de avaliação do Google (carrossel 3D) ===== */
 (function(){
-  var testimonials=[
-    {quote:"Excelente qualidade nos materiais e atendimento impecável. As cartelas ficaram perfeitas, exatamente como pedimos.",name:"Fabrízio Ramos",designation:"Avaliação no Google",src:"img/prod-cartela.jpg"},
-    {quote:"Empresa séria e comprometida com prazos. O acabamento dos mostruários superou nossa expectativa.",name:"Ana Claudia Paloschi",designation:"Avaliação no Google",src:"img/prod-books.jpg"},
-    {quote:"Parceria de anos. Sempre entregam a cor certa e com um padrão de qualidade que faz diferença na venda.",name:"Amanda de Castilhos",designation:"Avaliação no Google",src:"img/prod-leque.jpg"}
+  var G='<svg class="gicon" viewBox="0 0 48 48"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18c-.44-1.32-.69-2.73-.69-4.18s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>';
+  var reviews=[
+    {text:"Excelente qualidade nos materiais e atendimento impecável. As cartelas ficaram perfeitas, exatamente como pedimos.",name:"Fabrízio Ramos",av:"#2f5d49"},
+    {text:"Empresa séria e comprometida com prazos. O acabamento dos mostruários superou nossa expectativa.",name:"Ana Claudia Paloschi",av:"#0071b8"},
+    {text:"Parceria de anos. Sempre entregam a cor certa e com um padrão de qualidade que faz diferença na venda.",name:"Amanda de Castilhos",av:"#b06a3a"}
   ];
-  var active=0,len=testimonials.length,cw=1200,timer=null;
-  var imagesEl=document.getElementById('tcImages'),nameEl=document.getElementById('tcName'),desigEl=document.getElementById('tcDesig'),quoteEl=document.getElementById('tcQuote');
-  testimonials.forEach(function(t){var im=document.createElement('img');im.src=t.src;im.alt=t.name;imagesEl.appendChild(im);});
-  var imgs=imagesEl.querySelectorAll('img');
-  function gapf(w){var a=1024,b=1456,mn=60,mx=86;if(w<=a)return mn;if(w>=b)return Math.max(mn,mx+0.06018*(w-b));return mn+(mx-mn)*((w-a)/(b-a));}
-  function styles(){var gap=gapf(cw),su=gap*0.8;imgs.forEach(function(im,i){var A=i===active,L=(active-1+len)%len===i,R=(active+1)%len===i;im.style.transition='all .8s cubic-bezier(.4,2,.3,1)';if(A){im.style.zIndex=3;im.style.opacity=1;im.style.pointerEvents='auto';im.style.transform='translateX(0) translateY(0) scale(1) rotateY(0deg)';}else if(L){im.style.zIndex=2;im.style.opacity=1;im.style.pointerEvents='auto';im.style.transform='translateX(-'+gap+'px) translateY(-'+su+'px) scale(.85) rotateY(15deg)';}else if(R){im.style.zIndex=2;im.style.opacity=1;im.style.pointerEvents='auto';im.style.transform='translateX('+gap+'px) translateY(-'+su+'px) scale(.85) rotateY(-15deg)';}else{im.style.zIndex=1;im.style.opacity=0;im.style.pointerEvents='none';}});}
-  function text(){var t=testimonials[active];nameEl.textContent=t.name;desigEl.textContent=t.designation;quoteEl.innerHTML='';t.quote.split(' ').forEach(function(word,i){var sp=document.createElement('span');sp.className='w';sp.textContent=word+' ';sp.style.animationDelay=(0.025*i)+'s';quoteEl.appendChild(sp);});}
+  var active=0,len=reviews.length,cw=1200,timer=null;
+  var wrap=document.getElementById('tcImages');
+  // monta os cards
+  reviews.forEach(function(r){
+    var c=document.createElement('div');c.className='rcard';
+    c.innerHTML='<div class="rtop"><div class="rav" style="background:'+r.av+'">'+r.name.charAt(0)+'</div>'+
+      '<div><div class="rname">'+r.name+'</div><div class="rsrc">Avaliação no Google</div></div>'+G+'</div>'+
+      '<div class="rstars">★★★★★</div><div class="rtext">'+r.text+'</div>'+
+      '<div class="rdate">Postado no Google</div>';
+    wrap.appendChild(c);
+  });
+  var cards=wrap.querySelectorAll('.rcard');
+  var texts=wrap.querySelectorAll('.rtext');
+  function gapf(w){var a=1024,b=1456,mn=56,mx=80;if(w<=a)return mn;if(w>=b)return Math.max(mn,mx+0.05*(w-b));return mn+(mx-mn)*((w-a)/(b-a));}
+  function styles(){var gap=gapf(cw),su=gap*0.7;cards.forEach(function(el,i){var A=i===active,L=(active-1+len)%len===i,R=(active+1)%len===i;el.style.transition='all .8s cubic-bezier(.4,2,.3,1)';if(A){el.style.zIndex=3;el.style.opacity=1;el.style.pointerEvents='auto';el.style.transform='translateX(0) translateY(0) scale(1) rotateY(0deg)';}else if(L){el.style.zIndex=2;el.style.opacity=.55;el.style.pointerEvents='auto';el.style.transform='translateX(-'+gap+'px) translateY(-'+su+'px) scale(.9) rotateY(12deg)';}else if(R){el.style.zIndex=2;el.style.opacity=.55;el.style.pointerEvents='auto';el.style.transform='translateX('+gap+'px) translateY(-'+su+'px) scale(.9) rotateY(-12deg)';}else{el.style.zIndex=1;el.style.opacity=0;el.style.pointerEvents='none';}});}
+  function text(){var t=reviews[active].text,el=texts[active];el.innerHTML='';t.split(' ').forEach(function(word,i){var sp=document.createElement('span');sp.className='w';sp.textContent=word+' ';sp.style.animationDelay=(0.02*i)+'s';el.appendChild(sp);});}
   function upd(){styles();text();}
   function nx(){active=(active+1)%len;upd();rst();}
   function pv(){active=(active-1+len)%len;upd();rst();}
   function rst(){if(timer){clearInterval(timer);st();}}
-  function st(){timer=setInterval(function(){active=(active+1)%len;upd();},5000);}
-  function meas(){if(imagesEl)cw=imagesEl.offsetWidth;styles();}
+  function st(){timer=setInterval(function(){active=(active+1)%len;upd();},5500);}
+  function meas(){if(wrap)cw=wrap.offsetWidth;styles();}
   window.addEventListener('resize',meas);
   document.getElementById('tcPrev').addEventListener('click',pv);
   document.getElementById('tcNext').addEventListener('click',nx);
