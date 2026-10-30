@@ -528,14 +528,11 @@ document.querySelectorAll('[data-count]').forEach(function(el){cio.observe(el);}
 // CLIENTES — mural de logos (edite a lista; arquivos em img/clientes/<slug>.svg|png|webp|jpg)
 (function(){
   var clientes=[
-    {n:'Evetex',s:'evetex'},
-    {n:'Libélula Têxtil',s:'libelula'},
-    {n:'Kiv Têxtil',s:'kiv'},
-    {n:'Malhatec',s:'malhatec'},
     {n:'RVB Malhas',s:'rvb-malhas'},
-    {n:'Aradefe Malhas',s:'aradefe'},
-    {n:'Majo Lacres',s:'majo-lacres'},
-    {n:'Grupo Têxtil',s:'grupo-textil'}
+    {n:'Evetex',s:'evetex'},
+    {n:'Malhatec',s:'malhatec'},
+    {n:'Aradefe',s:'aradefe'},
+    {n:'Libélula',s:'libelula'}
   ];
   var track=document.getElementById('clitrack');if(!track)return;
   function add(c){

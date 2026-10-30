@@ -1,20 +1,21 @@
-LOGOS DOS CLIENTES — mural da home (esteira "Marcas que já produzem com a NF")
+LOGOS DOS CLIENTES — mural da home ("Marcas que já produzem com a NF")
 
-Solte aqui os logos dos clientes. Preferência: SVG ou PNG com FUNDO TRANSPARENTE.
-A esteira deixa o logo em cinza e colore no hover, então funciona melhor com logo
-de uma cor só / vetor limpo. Altura é padronizada automaticamente (~36px).
+Como funciona: a lista dos clientes está no <script> CLIENTES do index.html.
+Cada item tem um "slug" e o site carrega img/clientes/<slug>.(svg|png|webp|jpg).
+No mural os logos ficam em CINZA e viram COR no hover. Altura padronizada (~36px).
+Preferência: SVG ou PNG transparente. Logo branco (p/ fundo escuro) é convertido
+aqui para um tom escuro; logo colorido entra como está.
 
-Nome do arquivo = o "slug" da lista (veja o <script> CLIENTES no index.html).
-Formatos aceitos, nesta ordem: .svg > .png > .webp > .jpg
+JÁ COLOCADOS (baixados do site oficial de cada empresa, 30/10/2026):
+  rvb-malhas.png  (RVB Malhas - rvbmalhas.com.br, era branco -> escurecido)
+  aradefe.png     (Aradefe - aradefe.com.br, era branco -> escurecido)
+  evetex.png      (Evetex Fios e Malhas - evetex.com.br)
+  malhatec.png    (MalhaTec Retilíneas - malhatec.com)
+  libelula.png    (Libélula - libelulatextil.com.br)
 
-Arquivos esperados (troque/edite a lista no index.html conforme a NF confirmar):
-  evetex.svg
-  libelula.svg        (Libélula Têxtil)
-  kiv.svg             (Kiv Têxtil)
-  malhatec.svg
-  rvb-malhas.svg
-  aradefe.svg         (Aradefe Malhas)
-  majo-lacres.svg
-  grupo-textil.svg    (Grupo Têxtil)
-
-Enquanto não houver o arquivo, aparece o nome do cliente em texto (reserva).
+FALTAM (não achei site/logo na internet - preciso que a NF mande o arquivo):
+  kiv.png          (Kiv Têxtil)
+  majo-lacres.png  (Majo Lacres)
+  grupo-textil.png (Grupo Têxtil)
+Para ativar: soltar o arquivo aqui com esse nome e adicionar a linha no
+<script> CLIENTES do index.html ({n:'Nome', s:'slug'}).
