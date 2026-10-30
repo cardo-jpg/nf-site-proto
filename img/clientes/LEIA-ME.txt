@@ -1,0 +1,20 @@
+LOGOS DOS CLIENTES — mural da home (esteira "Marcas que já produzem com a NF")
+
+Solte aqui os logos dos clientes. Preferência: SVG ou PNG com FUNDO TRANSPARENTE.
+A esteira deixa o logo em cinza e colore no hover, então funciona melhor com logo
+de uma cor só / vetor limpo. Altura é padronizada automaticamente (~36px).
+
+Nome do arquivo = o "slug" da lista (veja o <script> CLIENTES no index.html).
+Formatos aceitos, nesta ordem: .svg > .png > .webp > .jpg
+
+Arquivos esperados (troque/edite a lista no index.html conforme a NF confirmar):
+  evetex.svg
+  libelula.svg        (Libélula Têxtil)
+  kiv.svg             (Kiv Têxtil)
+  malhatec.svg
+  rvb-malhas.svg
+  aradefe.svg         (Aradefe Malhas)
+  majo-lacres.svg
+  grupo-textil.svg    (Grupo Têxtil)
+
+Enquanto não houver o arquivo, aparece o nome do cliente em texto (reserva).

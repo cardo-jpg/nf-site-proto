@@ -108,8 +108,11 @@
   .marq{border-bottom:1px solid var(--line);background:var(--white);overflow:hidden;padding:18px 0}
   .marq .track{display:flex;gap:0;white-space:nowrap;width:max-content;animation:marq 34s linear infinite}
   .marq:hover .track{animation-play-state:paused}
-  .marq span{font-size:clamp(20px,2.3vw,30px);font-weight:800;letter-spacing:-.02em;color:var(--ink2);padding:0 28px;display:inline-flex;align-items:center;gap:28px}
-  .marq span::after{content:"";width:7px;height:7px;border-radius:50%;background:var(--blue)}
+  .marq .lw{display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 44px}
+  .marq .lw img{max-height:36px;max-width:160px;width:auto;object-fit:contain;filter:grayscale(1);opacity:.58;transition:.3s var(--ease)}
+  .marq .lw:hover img{filter:none;opacity:1}
+  .marq .lw b{display:none;font-size:clamp(18px,2vw,24px);font-weight:800;letter-spacing:-.02em;color:#99a2ad;white-space:nowrap}
+  .marq .lw.noimg b{display:block}
   @keyframes marq{to{transform:translateX(-50%)}}
 
   /* STATEMENT + figures */
@@ -302,11 +305,8 @@
 <!-- CLIENTES -->
 <section class="clients" aria-label="Clientes">
   <div class="wrap"><p class="clients-lead rv">Marcas que já produzem com a Grupo NF</p></div>
-  <div class="marq" aria-hidden="true">
-    <div class="track">
-      <span>Evetex</span><span>Libélula Têxtil</span><span>Kiv Têxtil</span><span>Malhatec</span><span>RVB Malhas</span><span>Aradefe Malhas</span><span>Majo Lacres</span><span>Grupo Têxtil</span>
-      <span>Evetex</span><span>Libélula Têxtil</span><span>Kiv Têxtil</span><span>Malhatec</span><span>RVB Malhas</span><span>Aradefe Malhas</span><span>Majo Lacres</span><span>Grupo Têxtil</span>
-    </div>
+  <div class="marq">
+    <div class="track" id="clitrack"></div>
   </div>
 </section>
 
@@ -523,6 +523,31 @@ document.querySelectorAll('[data-count]').forEach(function(el){cio.observe(el);}
   var pp=document.getElementById('pprev'),pn=document.getElementById('pnext');
   if(pp)pp.addEventListener('click',function(){go(-1);});
   if(pn)pn.addEventListener('click',function(){go(1);});
+})();
+
+// CLIENTES — mural de logos (edite a lista; arquivos em img/clientes/<slug>.svg|png|webp|jpg)
+(function(){
+  var clientes=[
+    {n:'Evetex',s:'evetex'},
+    {n:'Libélula Têxtil',s:'libelula'},
+    {n:'Kiv Têxtil',s:'kiv'},
+    {n:'Malhatec',s:'malhatec'},
+    {n:'RVB Malhas',s:'rvb-malhas'},
+    {n:'Aradefe Malhas',s:'aradefe'},
+    {n:'Majo Lacres',s:'majo-lacres'},
+    {n:'Grupo Têxtil',s:'grupo-textil'}
+  ];
+  var track=document.getElementById('clitrack');if(!track)return;
+  function add(c){
+    var sp=document.createElement('span');sp.className='lw';
+    var img=document.createElement('img');img.alt=c.n;img.loading='lazy';
+    var exts=['svg','png','webp','jpg'],i=0;
+    img.onerror=function(){i++;if(i<exts.length){img.src='img/clientes/'+c.s+'.'+exts[i];}else{sp.classList.add('noimg');img.remove();}};
+    img.src='img/clientes/'+c.s+'.'+exts[0];
+    var b=document.createElement('b');b.textContent=c.n;
+    sp.appendChild(img);sp.appendChild(b);track.appendChild(sp);
+  }
+  clientes.forEach(add);clientes.forEach(add); // duplica p/ o loop
 })();
 
 // WhatsApp
