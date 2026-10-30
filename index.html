@@ -205,7 +205,9 @@
   @media(max-width:560px){.tc-images{height:18rem}.tc-quote{min-height:10rem}}
 
   /* CTA full-bleed */
-  .cta{position:relative;overflow:hidden;background:linear-gradient(140deg,var(--blue) 0%,var(--navy) 125%);color:#fff;padding:110px 0}
+  .cta{position:relative;overflow:hidden;background:linear-gradient(165deg,var(--blue) 0%,var(--navy) 100%);color:#fff;padding:94px 0 84px}
+  .colorstrip{position:absolute;top:0;left:0;right:0;height:14px;display:flex;z-index:1}
+  .colorstrip i{flex:1}
   .cta::before{content:"";position:absolute;left:-180px;bottom:-200px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.1),transparent 65%)}
   .cta .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
   .cta h2{font-size:clamp(34px,5vw,64px);color:#fff;max-width:14ch}
@@ -221,9 +223,15 @@
 
   /* FOOTER */
   footer{background:var(--navy);color:#9fbdd4;padding:70px 0 44px;font-size:14.5px}
-  footer .top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.1)}
+  footer{background:linear-gradient(180deg,var(--navy) 0%,#081a2b 100%)}
+  footer .top{display:grid;grid-template-columns:1.7fr 1fr 1fr;gap:48px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.1)}
   footer .crest{color:#fff;font-size:24px}
-  footer .about{margin-top:16px;max-width:320px;color:#9fbdd4;line-height:1.6}
+  footer .about{margin-top:16px;max-width:340px;color:#9fbdd4;line-height:1.65}
+  footer .socials{display:flex;gap:12px;margin-top:24px}
+  footer .socials a{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;padding:0;transition:.25s var(--ease)}
+  footer .socials a:hover{background:#fff;border-color:#fff;transform:translateY(-2px)}
+  footer .socials svg{width:19px;height:19px;stroke:#cfe2f2;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+  footer .socials a:hover svg{stroke:var(--navy)}
   footer .fh{color:#cfe2f2;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:16px;font-weight:700}
   footer a{color:#b0c9dc;display:block;padding:5px 0;transition:.2s}
   footer a:hover{color:#fff}
@@ -437,6 +445,7 @@
 
 <!-- CTA -->
 <section class="cta" id="contato">
+  <div class="colorstrip" aria-hidden="true"><i style="background:#b11e2f"></i><i style="background:#d83b2a"></i><i style="background:#e76a1f"></i><i style="background:#f0a01e"></i><i style="background:#f4cf3b"></i><i style="background:#c9d64a"></i><i style="background:#7faa3a"></i><i style="background:#2f8f5f"></i><i style="background:#1f9e8a"></i><i style="background:#189bbf"></i><i style="background:#1f7fc0"></i><i style="background:#0071b8"></i><i style="background:#0b4f8a"></i><i style="background:#6a4fae"></i><i style="background:#8e4a9e"></i><i style="background:#c2479a"></i><i style="background:#e0609e"></i><i style="background:#ef8bb0"></i><i style="background:#8a5a3c"></i><i style="background:#c99a5e"></i></div>
   <div class="wrap">
     <div class="cta-main rv">
       <h2>Vamos produzir a sua cartela?</h2>
@@ -454,9 +463,14 @@
 <footer>
   <div class="wrap">
     <div class="top">
-      <div>
+      <div class="fcol-brand">
         <span class="crest">Grupo NF</span>
-        <p class="about">Cartelas de cores, mostruários e materiais de apresentação para o setor têxtil. Brusque, Santa Catarina.</p>
+        <p class="about">Cartelas de cores, mostruários e materiais de apresentação para o setor têxtil. Produção própria em Brusque, Santa Catarina, atendendo marcas em todo o Brasil.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M16 3h-2.5A4.5 4.5 0 0 0 9 7.5V10H6.5v3H9v8h3v-8h2.5l.5-3H12V7.5A1.5 1.5 0 0 1 13.5 6H16z"/></svg></a>
+          <a href="#" id="wa3" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M20.5 11.5a8 8 0 0 1-11.6 7.1L4 20l1.4-4.8A8 8 0 1 1 20.5 11.5z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5.6 0 .9-.6.6-1.1l-.7-1.1a.6.6 0 0 0-.8-.2l-.7.4a4 4 0 0 1-1.9-1.9l.4-.7a.6.6 0 0 0-.2-.8L10.6 8.4c-.5-.3-1.1 0-1.1.6z"/></svg></a>
+        </div>
       </div>
       <div>
         <div class="fh">Navegação</div>
@@ -469,7 +483,7 @@
       </div>
       <div>
         <div class="fh">Contato</div>
-        <a href="#" id="wa2">WhatsApp</a>
+        <a href="#" id="wa2">WhatsApp · 47 98442-8929</a>
         <a href="https://www.gruponf.com.br" target="_blank" rel="noopener">gruponf.com.br</a>
         <a href="#">Brusque / SC</a>
       </div>
@@ -549,7 +563,7 @@ document.querySelectorAll('[data-count]').forEach(function(el){cio.observe(el);}
 
 // WhatsApp
 var WA='5547984428929',link='https://api.whatsapp.com/send?phone='+WA+'&text='+encodeURIComponent('Olá! Vim pelo site e gostaria de um orçamento de cartelas/mostruários.');
-['wa','wa2'].forEach(function(id){var e=document.getElementById(id);if(e)e.href=link;});
+['wa','wa2','wa3'].forEach(function(id){var e=document.getElementById(id);if(e)e.href=link;});
 
 // circular testimonials
 (function(){
