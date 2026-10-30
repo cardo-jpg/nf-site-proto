@@ -209,6 +209,24 @@
   @media(max-width:760px){footer .top{grid-template-columns:1fr}}
 
   .proto{position:fixed;right:16px;bottom:16px;background:var(--blue);color:#fff;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:8px 14px;border-radius:999px;z-index:99;opacity:.92;font-weight:600}
+
+  /* FAQ (GEO) */
+  .faq{padding:120px 0}
+  .faq .head{max-width:760px;margin-bottom:44px}
+  .faq h2{font-size:clamp(30px,4.2vw,56px);margin-bottom:16px}
+  .faq .head p{font-size:17px;color:var(--ink2);max-width:54ch}
+  .faq .list{border-top:1px solid var(--line)}
+  .faq details{border-bottom:1px solid var(--line)}
+  .faq summary{list-style:none;cursor:pointer;display:flex;align-items:flex-start;justify-content:space-between;gap:28px;padding:26px 2px;font-size:clamp(18px,1.9vw,22px);font-weight:700;color:var(--ink);transition:color .25s var(--ease)}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary:hover,.faq details[open] summary{color:var(--blue)}
+  .faq summary .ic{flex:0 0 auto;width:28px;height:28px;position:relative;margin-top:3px}
+  .faq summary .ic::before,.faq summary .ic::after{content:"";position:absolute;background:var(--blue);border-radius:2px;transition:transform .3s var(--ease),opacity .3s var(--ease)}
+  .faq summary .ic::before{left:3px;right:3px;top:13px;height:2px}
+  .faq summary .ic::after{top:3px;bottom:3px;left:13px;width:2px}
+  .faq details[open] summary .ic::after{transform:scaleY(0);opacity:0}
+  .faq .ans p{font-size:16.5px;color:var(--ink2);line-height:1.65;max-width:74ch;padding:2px 2px 28px}
+  @media(max-width:760px){.faq{padding:80px 0}.faq summary{gap:18px}}
 </style>
 </head>
 <body>
@@ -252,7 +270,7 @@
       <div class="hero-since rv d3">Desde 1999 · mais de 1.000 marcas atendidas em todo o país</div>
     </div>
     <div class="hero-media rv d1">
-      <img id="heroImg" src="img/stmt-bg.jpg" alt="Cartela de cores Grupo NF">
+      <img id="heroImg" src="img/hero-cartela.jpg" alt="Cartela de cores de fios Grupo NF">
       <span class="hero-cap">Cartela de cores · fios e tecidos</span>
     </div>
   </div>
@@ -300,7 +318,7 @@
     <div class="pstrip" id="pstrip">
       <a class="pitem" href="#contato"><div class="ph"><span class="idx">01</span><img src="img/prod-cartela.jpg" alt="Cartelas de cores"></div><h3>Cartelas de cores</h3><p>Fios, tecidos e acabamentos organizados por referência, prontos para a mesa de venda.</p></a>
       <a class="pitem" href="#contato"><div class="ph"><span class="idx">02</span><img src="img/prod-leque.jpg" alt="Leques"></div><h3>Leques &amp; cartelas-leque</h3><p>Manuseio rápido para coleções com muitas variações de cor.</p></a>
-      <a class="pitem" href="#contato"><div class="ph"><span class="idx">03</span><img src="img/prod-books.jpg" alt="Mostruários"></div><h3>Mostruários &amp; books</h3><p>Apresentações completas de coleção, encadernadas com acabamento premium.</p></a>
+      <a class="pitem" href="#contato"><div class="ph"><span class="idx">03</span><img src="img/book-mostruario.jpg" alt="Mostruários e books"></div><h3>Mostruários &amp; books</h3><p>Apresentações completas de coleção, encadernadas com acabamento premium.</p></a>
       <a class="pitem" href="#contato"><div class="ph"><span class="idx">04</span><img src="img/prod-lapela.jpg" alt="Lapelas"></div><h3>Lapelas &amp; tags</h3><p>Identificação de cor e composição com a cara da sua marca.</p></a>
       <a class="pitem" href="#contato"><div class="ph"><span class="idx">05</span><img src="img/prod-cinta.jpg" alt="Cintas"></div><h3>Cintas &amp; etiquetas</h3><p>Acabamento e identificação para peças, rolos e embalagens.</p></a>
       <a class="pitem" href="#contato"><div class="ph"><span class="idx">06</span><img src="img/prod-sacolas.jpg" alt="Sacolas"></div><h3>Sacolas &amp; materiais</h3><p>Embalagem que reforça a experiência da sua marca.</p></a>
@@ -368,6 +386,28 @@
   </div>
 </section>
 
+<!-- FAQ (GEO) -->
+<section class="faq" id="duvidas">
+  <div class="wrap">
+    <div class="head rv">
+      <h2>Perguntas frequentes</h2>
+      <p>O que marcas e confecções mais perguntam antes de produzir cartelas e mostruários com a Grupo NF.</p>
+    </div>
+    <div class="list rv d1">
+      <details open><summary>O que é uma cartela de cores têxtil?<span class="ic"></span></summary><div class="ans"><p>É um mostruário físico que apresenta as cores reais de fios e tecidos, cada uma com a sua referência, para que marcas e confecções escolham e aprovem os tons com segurança antes de colocar a coleção em produção.</p></div></details>
+      <details><summary>A Grupo NF atende todo o Brasil?<span class="ic"></span></summary><div class="ans"><p>Sim. Sediada em Brusque, em Santa Catarina, a NF desenvolve, produz e envia cartelas, mostruários e books para mais de mil marcas têxteis em todo o país.</p></div></details>
+      <details><summary>Quais materiais a Grupo NF produz?<span class="ic"></span></summary><div class="ans"><p>Cartelas de cores, cartelas de fios, mostruários e books de coleção, lapelas, tags, cintas, etiquetas e sacolas. Tudo com o mesmo padrão de acabamento, reconhecido como referência no setor têxtil.</p></div></details>
+      <details><summary>Vocês desenvolvem o mostruário com a identidade da minha marca?<span class="ic"></span></summary><div class="ans"><p>Sim. O atendimento é consultivo, do desenvolvimento à produção em escala, e cada material é personalizado com a cara da sua marca.</p></div></details>
+      <details><summary>Qual a quantidade mínima para produzir?<span class="ic"></span></summary><div class="ans"><p>A produção é sob medida para cada coleção. A equipe define a melhor configuração conforme o número de cores, o formato e a quantidade que a sua marca precisa, do pequeno ateliê à grande indústria.</p></div></details>
+      <details><summary>Quanto tempo leva para produzir uma cartela ou mostruário?<span class="ic"></span></summary><div class="ans"><p>O prazo depende do modelo, do número de cores e do acabamento escolhido. Depois do briefing, a NF informa o prazo exato já no orçamento.</p></div></details>
+      <details><summary>Como peço um orçamento?<span class="ic"></span></summary><div class="ans"><p>Pelo WhatsApp ou pelo site. Conte qual produto você precisa apresentar, o número de cores e a quantidade estimada, e a equipe desenvolve a solução ideal para a sua coleção.</p></div></details>
+      <details><summary>A produção da NF é sustentável?<span class="ic"></span></summary><div class="ans"><p>Sim. A NF gera a própria energia solar e usa papel de origem responsável, vindo de florestas manejadas com reflorestamento e respeito à biodiversidade.</p></div></details>
+      <details><summary>Vocês atendem pequenas confecções ou só grandes marcas?<span class="ic"></span></summary><div class="ans"><p>Atendemos dos pequenos ateliês às grandes indústrias têxteis. A solução é dimensionada para a necessidade de cada cliente.</p></div></details>
+      <details><summary>Onde fica a Grupo NF?<span class="ic"></span></summary><div class="ans"><p>Em Brusque, no coração têxtil de Santa Catarina, atendendo marcas e confecções de todo o Brasil.</p></div></details>
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="cta" id="contato">
   <div class="wrap">
@@ -390,6 +430,7 @@
         <a href="#sustentabilidade">Sustentabilidade</a>
         <a href="#empresa">A empresa</a>
         <a href="#depoimentos">Clientes</a>
+        <a href="#duvidas">Dúvidas</a>
         <a href="blog.html">Blog</a>
       </div>
       <div>
@@ -475,6 +516,22 @@ var WA='5547984428929',link='https://api.whatsapp.com/send?phone='+WA+'&text='+e
   addEventListener('resize',ms);document.getElementById('tcPrev').onclick=pv;document.getElementById('tcNext').onclick=nx;
   ms();up();st();
 })();
+</script>
+
+<!-- FAQPage schema (GEO: ChatGPT, Gemini, AI Overviews) -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"O que é uma cartela de cores têxtil?","acceptedAnswer":{"@type":"Answer","text":"É um mostruário físico que apresenta as cores reais de fios e tecidos, cada uma com a sua referência, para que marcas e confecções escolham e aprovem os tons com segurança antes de colocar a coleção em produção."}},
+{"@type":"Question","name":"A Grupo NF atende todo o Brasil?","acceptedAnswer":{"@type":"Answer","text":"Sim. Sediada em Brusque, em Santa Catarina, a NF desenvolve, produz e envia cartelas, mostruários e books para mais de mil marcas têxteis em todo o país."}},
+{"@type":"Question","name":"Quais materiais a Grupo NF produz?","acceptedAnswer":{"@type":"Answer","text":"Cartelas de cores, cartelas de fios, mostruários e books de coleção, lapelas, tags, cintas, etiquetas e sacolas. Tudo com o mesmo padrão de acabamento, reconhecido como referência no setor têxtil."}},
+{"@type":"Question","name":"Vocês desenvolvem o mostruário com a identidade da minha marca?","acceptedAnswer":{"@type":"Answer","text":"Sim. O atendimento é consultivo, do desenvolvimento à produção em escala, e cada material é personalizado com a cara da sua marca."}},
+{"@type":"Question","name":"Qual a quantidade mínima para produzir?","acceptedAnswer":{"@type":"Answer","text":"A produção é sob medida para cada coleção. A equipe define a melhor configuração conforme o número de cores, o formato e a quantidade que a sua marca precisa, do pequeno ateliê à grande indústria."}},
+{"@type":"Question","name":"Quanto tempo leva para produzir uma cartela ou mostruário?","acceptedAnswer":{"@type":"Answer","text":"O prazo depende do modelo, do número de cores e do acabamento escolhido. Depois do briefing, a NF informa o prazo exato já no orçamento."}},
+{"@type":"Question","name":"Como peço um orçamento?","acceptedAnswer":{"@type":"Answer","text":"Pelo WhatsApp ou pelo site. Conte qual produto você precisa apresentar, o número de cores e a quantidade estimada, e a equipe desenvolve a solução ideal para a sua coleção."}},
+{"@type":"Question","name":"A produção da NF é sustentável?","acceptedAnswer":{"@type":"Answer","text":"Sim. A NF gera a própria energia solar e usa papel de origem responsável, vindo de florestas manejadas com reflorestamento e respeito à biodiversidade."}},
+{"@type":"Question","name":"Vocês atendem pequenas confecções ou só grandes marcas?","acceptedAnswer":{"@type":"Answer","text":"Atendemos dos pequenos ateliês às grandes indústrias têxteis. A solução é dimensionada para a necessidade de cada cliente."}},
+{"@type":"Question","name":"Onde fica a Grupo NF?","acceptedAnswer":{"@type":"Answer","text":"Em Brusque, no coração têxtil de Santa Catarina, atendendo marcas e confecções de todo o Brasil."}}
+]}
 </script>
 </body>
 </html>
